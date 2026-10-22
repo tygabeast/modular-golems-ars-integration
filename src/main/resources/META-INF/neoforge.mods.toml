@@ -1,0 +1,59 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+modId = "mg_arcane"
+version = "1.3.1"
+displayName = "Modular Golems - Ars Integration"
+logoFile = "logo.png"
+authors = "Tygabeast"
+description = '''
+Adds Modular Golems parts, constructs and abilities for the materials of Ars Nouveau, Ars Elemental and Ars Elemancy:
+Source Gem, the Fire/Water/Earth/Air/Conjuration/Abjuration/Manipulation essences, Anima, Silt/Lava/Mire/Cinder/Vapor/Tempest
+essences and the Elemancer Shard. Constructs and golem parts are made at the Enchanting Apparatus.
+Ars Elemental and Ars Elemancy are optional: the Anima, combination and shard materials only appear when those mods are installed.
+Config: mg_arcane-common.toml.
+'''
+
+[[dependencies.mg_arcane]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.mg_arcane]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1]"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.mg_arcane]]
+modId = "modulargolems"
+type = "required"
+versionRange = "[3.1.43,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.mg_arcane]]
+modId = "ars_nouveau"
+type = "required"
+versionRange = "[5.0,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.mg_arcane]]
+modId = "ars_elemental"
+type = "optional"
+versionRange = "[0.7,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.mg_arcane]]
+modId = "ars_elemancy"
+type = "optional"
+versionRange = "[1.0,)"
+ordering = "AFTER"
+side = "BOTH"

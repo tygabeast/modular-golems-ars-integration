@@ -1,0 +1,25 @@
+{
+  "ingredients": {
+    "ars_elemancy:vapor": {
+      "item": "ars_elemancy:vapor_essence"
+    }
+  },
+  "modifiers": {
+    "ars_elemancy:vapor": {
+      "modulargolems:scalding_steam": 1
+    }
+  },
+  "partLimitation": {},
+  "repairIngredients": {
+    "ars_elemancy:vapor": {
+      "item": "ars_elemancy:vapor_essence"
+    }
+  },
+  "stats": {
+    "ars_elemancy:vapor": {
+      "modulargolems:attack": 20.0,
+      "modulargolems:max_health": 140.0,
+      "modulargolems:weight": -0.2
+    }
+  }
+}

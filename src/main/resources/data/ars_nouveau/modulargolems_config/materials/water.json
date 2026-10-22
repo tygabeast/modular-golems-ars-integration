@@ -1,0 +1,24 @@
+{
+  "ingredients": {
+    "ars_nouveau:water": {
+      "item": "ars_nouveau:water_essence"
+    }
+  },
+  "modifiers": {
+    "ars_nouveau:water": {
+      "modulargolems:tidal_chill": 1
+    }
+  },
+  "partLimitation": {},
+  "repairIngredients": {
+    "ars_nouveau:water": {
+      "item": "ars_nouveau:water_essence"
+    }
+  },
+  "stats": {
+    "ars_nouveau:water": {
+      "modulargolems:attack": 14.0,
+      "modulargolems:max_health": 140.0
+    }
+  }
+}

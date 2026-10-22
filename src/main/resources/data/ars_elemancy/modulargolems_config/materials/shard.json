@@ -1,0 +1,26 @@
+{
+  "ingredients": {
+    "ars_elemancy:shard": {
+      "item": "ars_elemancy:elemancer_essence"
+    }
+  },
+  "modifiers": {
+    "ars_elemancy:shard": {
+      "modulargolems:elemental_surge": 1
+    }
+  },
+  "partLimitation": {},
+  "repairIngredients": {
+    "ars_elemancy:shard": {
+      "item": "ars_elemancy:elemancer_essence"
+    }
+  },
+  "stats": {
+    "ars_elemancy:shard": {
+      "modulargolems:attack": 30.0,
+      "modulargolems:max_health": 300.0,
+      "modulargolems:sweep": 1.0,
+      "modulargolems:weight": -0.2
+    }
+  }
+}

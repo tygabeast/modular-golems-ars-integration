@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'net.neoforged.moddev' version '1.0.21'
+}
+
+version = '1.3.1'
+group = 'mgarcane'
+base { archivesName = 'mg_arcane' }
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.neoforged.net/releases' }
+    // the mods below are NOT on a maven: put the jars into libs/ (see README / setup_libs.py)
+    flatDir { dirs 'libs' }
+}
+
+neoForge {
+    version = '21.1.256'
+}
+
+configurations { modLibs }
+
+dependencies {
+    // every jar in libs/ is compile-only; none of it is bundled into this mod
+    compileOnly fileTree(dir: 'libs', include: '*.jar')
+}
+
+tasks.register('checkLibs') {
+    doLast {
+        def need = ['modulargolems', 'l2core', 'Registrate', 'l2damagetracker', 'mob_weapon_api', 'l2serial']
+        def have = file('libs').listFiles()?.collect { it.name } ?: []
+        need.each { n ->
+            if (!have.any { it.toLowerCase().contains(n.toLowerCase()) })
+                throw new GradleException("libs/ is missing a jar matching '${n}'. Run: python3 setup_libs.py")
+        }
+    }
+}
+compileJava.dependsOn 'checkLibs'
+
+jar { manifest { attributes 'Implementation-Version': project.version } }

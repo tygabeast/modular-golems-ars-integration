@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ars_elemancy"
+    }
+  ],
+  "type": "ars_nouveau:enchanting_apparatus",
+  "keepNbtOfReagent": false,
+  "pedestalItems": [
+    {
+      "item": "modulargolems:arcane_silt_construct"
+    },
+    {
+      "item": "modulargolems:arcane_silt_construct"
+    },
+    {
+      "item": "modulargolems:arcane_silt_construct"
+    },
+    {
+      "item": "modulargolems:arcane_silt_construct"
+    }
+  ],
+  "reagent": {
+    "item": "modulargolems:dog_golem_legs"
+  },
+  "result": {
+    "count": 1,
+    "id": "modulargolems:dog_golem_legs",
+    "components": {
+      "modulargolems:part_material": "ars_elemancy:silt"
+    }
+  },
+  "sourceCost": 1800
+}

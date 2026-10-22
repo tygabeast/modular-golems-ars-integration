@@ -1,0 +1,41 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ars_elemancy"
+    }
+  ],
+  "type": "ars_nouveau:enchanting_apparatus",
+  "keepNbtOfReagent": false,
+  "pedestalItems": [
+    {
+      "item": "modulargolems:arcane_vapor_construct"
+    },
+    {
+      "item": "modulargolems:arcane_vapor_construct"
+    },
+    {
+      "item": "modulargolems:arcane_vapor_construct"
+    },
+    {
+      "item": "modulargolems:arcane_vapor_construct"
+    },
+    {
+      "item": "modulargolems:arcane_vapor_construct"
+    },
+    {
+      "item": "modulargolems:arcane_vapor_construct"
+    }
+  ],
+  "reagent": {
+    "item": "modulargolems:humanoid_golem_body"
+  },
+  "result": {
+    "count": 1,
+    "id": "modulargolems:humanoid_golem_body",
+    "components": {
+      "modulargolems:part_material": "ars_elemancy:vapor"
+    }
+  },
+  "sourceCost": 2700
+}

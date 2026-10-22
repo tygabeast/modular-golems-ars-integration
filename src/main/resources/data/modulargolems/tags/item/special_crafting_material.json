@@ -1,0 +1,68 @@
+{
+  "values": [
+    {
+      "id": "ars_nouveau:source_gem",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:fire_essence",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:water_essence",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:earth_essence",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:air_essence",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:conjuration_essence",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:abjuration_essence",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:manipulation_essence",
+      "required": false
+    },
+    {
+      "id": "ars_elemental:anima_essence",
+      "required": false
+    },
+    {
+      "id": "ars_elemancy:silt_essence",
+      "required": false
+    },
+    {
+      "id": "ars_elemancy:lava_essence",
+      "required": false
+    },
+    {
+      "id": "ars_elemancy:mire_essence",
+      "required": false
+    },
+    {
+      "id": "ars_elemancy:cinder_essence",
+      "required": false
+    },
+    {
+      "id": "ars_elemancy:vapor_essence",
+      "required": false
+    },
+    {
+      "id": "ars_elemancy:tempest_essence",
+      "required": false
+    },
+    {
+      "id": "ars_elemancy:elemancer_essence",
+      "required": false
+    }
+  ]
+}

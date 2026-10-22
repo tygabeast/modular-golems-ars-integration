@@ -1,0 +1,38 @@
+{
+  "type": "ars_nouveau:enchanting_apparatus",
+  "keepNbtOfReagent": false,
+  "pedestalItems": [
+    {
+      "item": "ars_nouveau:abjuration_essence"
+    },
+    {
+      "item": "ars_nouveau:abjuration_essence"
+    },
+    {
+      "item": "ars_nouveau:abjuration_essence"
+    },
+    {
+      "item": "ars_nouveau:abjuration_essence"
+    },
+    {
+      "item": "ars_nouveau:abjuration_essence"
+    },
+    {
+      "item": "ars_nouveau:abjuration_essence"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    }
+  ],
+  "reagent": {
+    "item": "minecraft:gold_block"
+  },
+  "result": {
+    "count": 3,
+    "id": "modulargolems:arcane_abjuration_construct"
+  },
+  "sourceCost": 1500
+}

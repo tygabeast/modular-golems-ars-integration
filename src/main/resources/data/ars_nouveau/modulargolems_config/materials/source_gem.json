@@ -1,0 +1,25 @@
+{
+  "ingredients": {
+    "ars_nouveau:source_gem": {
+      "item": "ars_nouveau:source_gem"
+    }
+  },
+  "modifiers": {
+    "ars_nouveau:source_gem": {
+      "modulargolems:source_leech": 1
+    }
+  },
+  "partLimitation": {},
+  "repairIngredients": {
+    "ars_nouveau:source_gem": {
+      "item": "ars_nouveau:source_gem"
+    }
+  },
+  "stats": {
+    "ars_nouveau:source_gem": {
+      "modulargolems:attack": 14.0,
+      "modulargolems:max_health": 120.0,
+      "modulargolems:weight": -0.2
+    }
+  }
+}

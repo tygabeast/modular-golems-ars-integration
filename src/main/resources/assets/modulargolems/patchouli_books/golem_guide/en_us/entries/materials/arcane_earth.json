@@ -1,0 +1,29 @@
+{
+  "flag": "mod:ars_nouveau",
+  "name": "Earth",
+  "icon": "modulargolems:arcane_earth_construct",
+  "category": "modulargolems:materials",
+  "sortnum": 2003,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:arcane_earth_construct",
+      "text": "Main material to craft Earth golem parts. Tremor: hits splash damage to nearby enemies and knock them back. Very tough, resists knockback and explosions.$(br2)Craft the construct at an Enchanting Apparatus, then use constructs on the apparatus to make the golem parts."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:metal_golem_holder[modulargolems:golem_materials={parts:[{part:\"modulargolems:metal_golem_arm\",material:\"ars_nouveau:earth\"},{part:\"modulargolems:metal_golem_body\",material:\"ars_nouveau:earth\"},{part:\"modulargolems:metal_golem_arm\",material:\"ars_nouveau:earth\"},{part:\"modulargolems:metal_golem_legs\",material:\"ars_nouveau:earth\"}]}]",
+      "text": "Use JEI (press R) to check part stats of each part made of this material."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:humanoid_golem_holder[modulargolems:golem_materials={parts:[{part:\"modulargolems:humanoid_golem_body\",material:\"ars_nouveau:earth\"},{part:\"modulargolems:humanoid_golem_arms\",material:\"ars_nouveau:earth\"},{part:\"modulargolems:humanoid_golem_legs\",material:\"ars_nouveau:earth\"}]}]",
+      "text": "Use JEI (press R) to check part stats of each part made of this material."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:dog_golem_holder[modulargolems:golem_materials={parts:[{part:\"modulargolems:dog_golem_body\",material:\"ars_nouveau:earth\"},{part:\"modulargolems:dog_golem_legs\",material:\"ars_nouveau:earth\"}]}]",
+      "text": "Use JEI (press R) to check part stats of each part made of this material."
+    }
+  ]
+}

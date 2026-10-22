@@ -1,0 +1,24 @@
+{
+  "ingredients": {
+    "ars_nouveau:conjuration": {
+      "item": "ars_nouveau:conjuration_essence"
+    }
+  },
+  "modifiers": {
+    "ars_nouveau:conjuration": {
+      "modulargolems:spectral_fangs": 1
+    }
+  },
+  "partLimitation": {},
+  "repairIngredients": {
+    "ars_nouveau:conjuration": {
+      "item": "ars_nouveau:conjuration_essence"
+    }
+  },
+  "stats": {
+    "ars_nouveau:conjuration": {
+      "modulargolems:attack": 18.0,
+      "modulargolems:max_health": 110.0
+    }
+  }
+}

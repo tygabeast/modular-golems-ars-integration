@@ -1,0 +1,24 @@
+{
+  "ingredients": {
+    "ars_elemancy:silt": {
+      "item": "ars_elemancy:silt_essence"
+    }
+  },
+  "modifiers": {
+    "ars_elemancy:silt": {
+      "modulargolems:sandblast": 1
+    }
+  },
+  "partLimitation": {},
+  "repairIngredients": {
+    "ars_elemancy:silt": {
+      "item": "ars_elemancy:silt_essence"
+    }
+  },
+  "stats": {
+    "ars_elemancy:silt": {
+      "modulargolems:attack": 18.0,
+      "modulargolems:max_health": 140.0
+    }
+  }
+}

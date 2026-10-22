@@ -1,0 +1,25 @@
+{
+  "ingredients": {
+    "ars_nouveau:air": {
+      "item": "ars_nouveau:air_essence"
+    }
+  },
+  "modifiers": {
+    "ars_nouveau:air": {
+      "modulargolems:gale_step": 1
+    }
+  },
+  "partLimitation": {},
+  "repairIngredients": {
+    "ars_nouveau:air": {
+      "item": "ars_nouveau:air_essence"
+    }
+  },
+  "stats": {
+    "ars_nouveau:air": {
+      "modulargolems:attack": 14.0,
+      "modulargolems:max_health": 90.0,
+      "modulargolems:weight": -0.4
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "type": "ars_nouveau:enchanting_apparatus",
+  "keepNbtOfReagent": false,
+  "pedestalItems": [
+    {
+      "item": "modulargolems:arcane_air_construct"
+    },
+    {
+      "item": "modulargolems:arcane_air_construct"
+    },
+    {
+      "item": "modulargolems:arcane_air_construct"
+    },
+    {
+      "item": "modulargolems:arcane_air_construct"
+    },
+    {
+      "item": "modulargolems:arcane_air_construct"
+    },
+    {
+      "item": "modulargolems:arcane_air_construct"
+    }
+  ],
+  "reagent": {
+    "item": "modulargolems:humanoid_golem_body"
+  },
+  "result": {
+    "count": 1,
+    "id": "modulargolems:humanoid_golem_body",
+    "components": {
+      "modulargolems:part_material": "ars_nouveau:air"
+    }
+  },
+  "sourceCost": 1500
+}

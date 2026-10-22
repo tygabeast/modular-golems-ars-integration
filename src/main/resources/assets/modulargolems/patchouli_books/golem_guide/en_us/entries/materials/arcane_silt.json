@@ -1,0 +1,29 @@
+{
+  "flag": "mod:ars_elemancy",
+  "name": "Silt",
+  "icon": "modulargolems:arcane_silt_construct",
+  "category": "modulargolems:materials",
+  "sortnum": 2009,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:arcane_silt_construct",
+      "text": "Main material to craft Silt golem parts. Sandblast: hits blind the target.$(br2)Needs the Earth and Air essences to craft the construct, then parts are made at an Enchanting Apparatus. Its circlet carries a gem for each element."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:metal_golem_holder[modulargolems:golem_materials={parts:[{part:\"modulargolems:metal_golem_arm\",material:\"ars_elemancy:silt\"},{part:\"modulargolems:metal_golem_body\",material:\"ars_elemancy:silt\"},{part:\"modulargolems:metal_golem_arm\",material:\"ars_elemancy:silt\"},{part:\"modulargolems:metal_golem_legs\",material:\"ars_elemancy:silt\"}]}]",
+      "text": "Use JEI (press R) to check part stats of each part made of this material."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:humanoid_golem_holder[modulargolems:golem_materials={parts:[{part:\"modulargolems:humanoid_golem_body\",material:\"ars_elemancy:silt\"},{part:\"modulargolems:humanoid_golem_arms\",material:\"ars_elemancy:silt\"},{part:\"modulargolems:humanoid_golem_legs\",material:\"ars_elemancy:silt\"}]}]",
+      "text": "Use JEI (press R) to check part stats of each part made of this material."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:dog_golem_holder[modulargolems:golem_materials={parts:[{part:\"modulargolems:dog_golem_body\",material:\"ars_elemancy:silt\"},{part:\"modulargolems:dog_golem_legs\",material:\"ars_elemancy:silt\"}]}]",
+      "text": "Use JEI (press R) to check part stats of each part made of this material."
+    }
+  ]
+}

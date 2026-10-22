@@ -1,0 +1,24 @@
+{
+  "ingredients": {
+    "ars_nouveau:abjuration": {
+      "item": "ars_nouveau:abjuration_essence"
+    }
+  },
+  "modifiers": {
+    "ars_nouveau:abjuration": {
+      "modulargolems:arcane_ward": 1
+    }
+  },
+  "partLimitation": {},
+  "repairIngredients": {
+    "ars_nouveau:abjuration": {
+      "item": "ars_nouveau:abjuration_essence"
+    }
+  },
+  "stats": {
+    "ars_nouveau:abjuration": {
+      "modulargolems:attack": 12.0,
+      "modulargolems:max_health": 180.0
+    }
+  }
+}

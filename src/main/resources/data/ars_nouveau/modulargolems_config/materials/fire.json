@@ -1,0 +1,25 @@
+{
+  "ingredients": {
+    "ars_nouveau:fire": {
+      "item": "ars_nouveau:fire_essence"
+    }
+  },
+  "modifiers": {
+    "ars_nouveau:fire": {
+      "modulargolems:ember_touch": 1,
+      "modulargolems:fire_immune": 1
+    }
+  },
+  "partLimitation": {},
+  "repairIngredients": {
+    "ars_nouveau:fire": {
+      "item": "ars_nouveau:fire_essence"
+    }
+  },
+  "stats": {
+    "ars_nouveau:fire": {
+      "modulargolems:attack": 18.0,
+      "modulargolems:max_health": 100.0
+    }
+  }
+}

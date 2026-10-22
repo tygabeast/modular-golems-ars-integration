@@ -1,0 +1,29 @@
+{
+  "type": "ars_nouveau:enchanting_apparatus",
+  "keepNbtOfReagent": false,
+  "pedestalItems": [
+    {
+      "item": "modulargolems:arcane_manipulation_construct"
+    },
+    {
+      "item": "modulargolems:arcane_manipulation_construct"
+    },
+    {
+      "item": "modulargolems:arcane_manipulation_construct"
+    },
+    {
+      "item": "modulargolems:arcane_manipulation_construct"
+    }
+  ],
+  "reagent": {
+    "item": "modulargolems:metal_golem_arm"
+  },
+  "result": {
+    "count": 1,
+    "id": "modulargolems:metal_golem_arm",
+    "components": {
+      "modulargolems:part_material": "ars_nouveau:manipulation"
+    }
+  },
+  "sourceCost": 1120
+}

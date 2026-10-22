@@ -1,0 +1,44 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ars_elemancy"
+    }
+  ],
+  "type": "ars_nouveau:enchanting_apparatus",
+  "keepNbtOfReagent": false,
+  "pedestalItems": [
+    {
+      "item": "ars_elemancy:lava_essence"
+    },
+    {
+      "item": "ars_elemancy:lava_essence"
+    },
+    {
+      "item": "ars_elemancy:lava_essence"
+    },
+    {
+      "item": "ars_elemancy:lava_essence"
+    },
+    {
+      "item": "ars_elemancy:lava_essence"
+    },
+    {
+      "item": "ars_elemancy:lava_essence"
+    },
+    {
+      "item": "ars_nouveau:fire_essence"
+    },
+    {
+      "item": "ars_nouveau:earth_essence"
+    }
+  ],
+  "reagent": {
+    "item": "minecraft:diamond_block"
+  },
+  "result": {
+    "count": 3,
+    "id": "modulargolems:arcane_lava_construct"
+  },
+  "sourceCost": 2000
+}

@@ -1,0 +1,29 @@
+{
+  "type": "ars_nouveau:enchanting_apparatus",
+  "keepNbtOfReagent": false,
+  "pedestalItems": [
+    {
+      "item": "modulargolems:arcane_water_construct"
+    },
+    {
+      "item": "modulargolems:arcane_water_construct"
+    },
+    {
+      "item": "modulargolems:arcane_water_construct"
+    },
+    {
+      "item": "modulargolems:arcane_water_construct"
+    }
+  ],
+  "reagent": {
+    "item": "modulargolems:metal_golem_arm"
+  },
+  "result": {
+    "count": 1,
+    "id": "modulargolems:metal_golem_arm",
+    "components": {
+      "modulargolems:part_material": "ars_nouveau:water"
+    }
+  },
+  "sourceCost": 800
+}

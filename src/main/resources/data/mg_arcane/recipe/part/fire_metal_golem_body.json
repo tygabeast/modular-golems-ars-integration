@@ -1,0 +1,35 @@
+{
+  "type": "ars_nouveau:enchanting_apparatus",
+  "keepNbtOfReagent": false,
+  "pedestalItems": [
+    {
+      "item": "modulargolems:arcane_fire_construct"
+    },
+    {
+      "item": "modulargolems:arcane_fire_construct"
+    },
+    {
+      "item": "modulargolems:arcane_fire_construct"
+    },
+    {
+      "item": "modulargolems:arcane_fire_construct"
+    },
+    {
+      "item": "modulargolems:arcane_fire_construct"
+    },
+    {
+      "item": "modulargolems:arcane_fire_construct"
+    }
+  ],
+  "reagent": {
+    "item": "modulargolems:metal_golem_body"
+  },
+  "result": {
+    "count": 1,
+    "id": "modulargolems:metal_golem_body",
+    "components": {
+      "modulargolems:part_material": "ars_nouveau:fire"
+    }
+  },
+  "sourceCost": 1500
+}

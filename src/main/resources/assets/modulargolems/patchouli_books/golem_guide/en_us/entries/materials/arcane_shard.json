@@ -1,0 +1,29 @@
+{
+  "flag": "mod:ars_elemancy",
+  "name": "Elemancer Shard",
+  "icon": "modulargolems:arcane_shard_construct",
+  "category": "modulargolems:materials",
+  "sortnum": 2015,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:arcane_shard_construct",
+      "text": "Main material to craft Elemancer Shard golem parts. Elemental Surge: hits deal bonus damage and cycle through burning, chilling, weakening and launching the target. The strongest of the Ars materials.$(br2)Needs the four elemental essences to craft the construct, then parts are made at an Enchanting Apparatus. Its circlet carries all four gems."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:metal_golem_holder[modulargolems:golem_materials={parts:[{part:\"modulargolems:metal_golem_arm\",material:\"ars_elemancy:shard\"},{part:\"modulargolems:metal_golem_body\",material:\"ars_elemancy:shard\"},{part:\"modulargolems:metal_golem_arm\",material:\"ars_elemancy:shard\"},{part:\"modulargolems:metal_golem_legs\",material:\"ars_elemancy:shard\"}]}]",
+      "text": "Use JEI (press R) to check part stats of each part made of this material."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:humanoid_golem_holder[modulargolems:golem_materials={parts:[{part:\"modulargolems:humanoid_golem_body\",material:\"ars_elemancy:shard\"},{part:\"modulargolems:humanoid_golem_arms\",material:\"ars_elemancy:shard\"},{part:\"modulargolems:humanoid_golem_legs\",material:\"ars_elemancy:shard\"}]}]",
+      "text": "Use JEI (press R) to check part stats of each part made of this material."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:dog_golem_holder[modulargolems:golem_materials={parts:[{part:\"modulargolems:dog_golem_body\",material:\"ars_elemancy:shard\"},{part:\"modulargolems:dog_golem_legs\",material:\"ars_elemancy:shard\"}]}]",
+      "text": "Use JEI (press R) to check part stats of each part made of this material."
+    }
+  ]
+}

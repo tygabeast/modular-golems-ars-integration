@@ -1,0 +1,25 @@
+{
+  "ingredients": {
+    "ars_elemancy:mire": {
+      "item": "ars_elemancy:mire_essence"
+    }
+  },
+  "modifiers": {
+    "ars_elemancy:mire": {
+      "modulargolems:quagmire": 1
+    }
+  },
+  "partLimitation": {},
+  "repairIngredients": {
+    "ars_elemancy:mire": {
+      "item": "ars_elemancy:mire_essence"
+    }
+  },
+  "stats": {
+    "ars_elemancy:mire": {
+      "modulargolems:attack": 16.0,
+      "modulargolems:max_health": 260.0,
+      "modulargolems:knockback_resistance": 0.5
+    }
+  }
+}

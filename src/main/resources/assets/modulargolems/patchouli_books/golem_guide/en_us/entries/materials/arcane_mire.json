@@ -1,0 +1,29 @@
+{
+  "flag": "mod:ars_elemancy",
+  "name": "Mire",
+  "icon": "modulargolems:arcane_mire_construct",
+  "category": "modulargolems:materials",
+  "sortnum": 2011,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:arcane_mire_construct",
+      "text": "Main material to craft Mire golem parts. Quagmire: nearby enemies are slowed while the golem fights. Very tough, resists knockback.$(br2)Needs the Water and Earth essences to craft the construct, then parts are made at an Enchanting Apparatus. Its circlet carries a gem for each element."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:metal_golem_holder[modulargolems:golem_materials={parts:[{part:\"modulargolems:metal_golem_arm\",material:\"ars_elemancy:mire\"},{part:\"modulargolems:metal_golem_body\",material:\"ars_elemancy:mire\"},{part:\"modulargolems:metal_golem_arm\",material:\"ars_elemancy:mire\"},{part:\"modulargolems:metal_golem_legs\",material:\"ars_elemancy:mire\"}]}]",
+      "text": "Use JEI (press R) to check part stats of each part made of this material."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:humanoid_golem_holder[modulargolems:golem_materials={parts:[{part:\"modulargolems:humanoid_golem_body\",material:\"ars_elemancy:mire\"},{part:\"modulargolems:humanoid_golem_arms\",material:\"ars_elemancy:mire\"},{part:\"modulargolems:humanoid_golem_legs\",material:\"ars_elemancy:mire\"}]}]",
+      "text": "Use JEI (press R) to check part stats of each part made of this material."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:dog_golem_holder[modulargolems:golem_materials={parts:[{part:\"modulargolems:dog_golem_body\",material:\"ars_elemancy:mire\"},{part:\"modulargolems:dog_golem_legs\",material:\"ars_elemancy:mire\"}]}]",
+      "text": "Use JEI (press R) to check part stats of each part made of this material."
+    }
+  ]
+}

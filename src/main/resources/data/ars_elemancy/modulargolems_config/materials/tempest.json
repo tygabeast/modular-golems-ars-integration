@@ -1,0 +1,26 @@
+{
+  "ingredients": {
+    "ars_elemancy:tempest": {
+      "item": "ars_elemancy:tempest_essence"
+    }
+  },
+  "modifiers": {
+    "ars_elemancy:tempest": {
+      "modulargolems:thunderstrike": 1,
+      "modulargolems:thunder_immune": 1
+    }
+  },
+  "partLimitation": {},
+  "repairIngredients": {
+    "ars_elemancy:tempest": {
+      "item": "ars_elemancy:tempest_essence"
+    }
+  },
+  "stats": {
+    "ars_elemancy:tempest": {
+      "modulargolems:attack": 26.0,
+      "modulargolems:max_health": 200.0,
+      "modulargolems:weight": -0.2
+    }
+  }
+}

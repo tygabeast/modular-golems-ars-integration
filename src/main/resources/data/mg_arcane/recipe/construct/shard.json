@@ -1,0 +1,44 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ars_elemancy"
+    }
+  ],
+  "type": "ars_nouveau:enchanting_apparatus",
+  "keepNbtOfReagent": false,
+  "pedestalItems": [
+    {
+      "item": "ars_elemancy:elemancer_essence"
+    },
+    {
+      "item": "ars_elemancy:elemancer_essence"
+    },
+    {
+      "item": "ars_elemancy:elemancer_essence"
+    },
+    {
+      "item": "ars_elemancy:elemancer_essence"
+    },
+    {
+      "item": "ars_nouveau:fire_essence"
+    },
+    {
+      "item": "ars_nouveau:water_essence"
+    },
+    {
+      "item": "ars_nouveau:earth_essence"
+    },
+    {
+      "item": "ars_nouveau:air_essence"
+    }
+  ],
+  "reagent": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "result": {
+    "count": 3,
+    "id": "modulargolems:arcane_shard_construct"
+  },
+  "sourceCost": 2500
+}

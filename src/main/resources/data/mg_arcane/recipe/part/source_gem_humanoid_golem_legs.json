@@ -1,0 +1,29 @@
+{
+  "type": "ars_nouveau:enchanting_apparatus",
+  "keepNbtOfReagent": false,
+  "pedestalItems": [
+    {
+      "item": "modulargolems:arcane_source_gem_construct"
+    },
+    {
+      "item": "modulargolems:arcane_source_gem_construct"
+    },
+    {
+      "item": "modulargolems:arcane_source_gem_construct"
+    },
+    {
+      "item": "modulargolems:arcane_source_gem_construct"
+    }
+  ],
+  "reagent": {
+    "item": "modulargolems:humanoid_golem_legs"
+  },
+  "result": {
+    "count": 1,
+    "id": "modulargolems:humanoid_golem_legs",
+    "components": {
+      "modulargolems:part_material": "ars_nouveau:source_gem"
+    }
+  },
+  "sourceCost": 1000
+}

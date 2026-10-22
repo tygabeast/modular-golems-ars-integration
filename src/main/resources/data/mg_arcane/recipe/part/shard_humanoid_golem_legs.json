@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ars_elemancy"
+    }
+  ],
+  "type": "ars_nouveau:enchanting_apparatus",
+  "keepNbtOfReagent": false,
+  "pedestalItems": [
+    {
+      "item": "modulargolems:arcane_shard_construct"
+    },
+    {
+      "item": "modulargolems:arcane_shard_construct"
+    },
+    {
+      "item": "modulargolems:arcane_shard_construct"
+    },
+    {
+      "item": "modulargolems:arcane_shard_construct"
+    }
+  ],
+  "reagent": {
+    "item": "modulargolems:humanoid_golem_legs"
+  },
+  "result": {
+    "count": 1,
+    "id": "modulargolems:humanoid_golem_legs",
+    "components": {
+      "modulargolems:part_material": "ars_elemancy:shard"
+    }
+  },
+  "sourceCost": 2200
+}

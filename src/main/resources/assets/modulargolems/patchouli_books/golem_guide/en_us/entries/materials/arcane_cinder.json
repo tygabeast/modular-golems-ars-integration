@@ -1,0 +1,29 @@
+{
+  "flag": "mod:ars_elemancy",
+  "name": "Cinder",
+  "icon": "modulargolems:arcane_cinder_construct",
+  "category": "modulargolems:materials",
+  "sortnum": 2012,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:arcane_cinder_construct",
+      "text": "Main material to craft Cinder golem parts. Ash Cloud: nearby enemies are weakened while the golem fights. The golem is immune to fire.$(br2)Needs the Fire and Air essences to craft the construct, then parts are made at an Enchanting Apparatus. Its circlet carries a gem for each element."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:metal_golem_holder[modulargolems:golem_materials={parts:[{part:\"modulargolems:metal_golem_arm\",material:\"ars_elemancy:cinder\"},{part:\"modulargolems:metal_golem_body\",material:\"ars_elemancy:cinder\"},{part:\"modulargolems:metal_golem_arm\",material:\"ars_elemancy:cinder\"},{part:\"modulargolems:metal_golem_legs\",material:\"ars_elemancy:cinder\"}]}]",
+      "text": "Use JEI (press R) to check part stats of each part made of this material."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:humanoid_golem_holder[modulargolems:golem_materials={parts:[{part:\"modulargolems:humanoid_golem_body\",material:\"ars_elemancy:cinder\"},{part:\"modulargolems:humanoid_golem_arms\",material:\"ars_elemancy:cinder\"},{part:\"modulargolems:humanoid_golem_legs\",material:\"ars_elemancy:cinder\"}]}]",
+      "text": "Use JEI (press R) to check part stats of each part made of this material."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:dog_golem_holder[modulargolems:golem_materials={parts:[{part:\"modulargolems:dog_golem_body\",material:\"ars_elemancy:cinder\"},{part:\"modulargolems:dog_golem_legs\",material:\"ars_elemancy:cinder\"}]}]",
+      "text": "Use JEI (press R) to check part stats of each part made of this material."
+    }
+  ]
+}
