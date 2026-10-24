@@ -1,0 +1,18 @@
+{
+  "base": {
+    "parent": "modulargolems:item/battle_axe",
+    "textures": {
+      "layer0": "modulargolems:item/equipments/arcane_golem_axe"
+    }
+  },
+  "gui_light": "front",
+  "loader": "neoforge:separate_transforms",
+  "perspectives": {
+    "gui": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "modulargolems:item/equipments/arcane_golem_axe_icon"
+      }
+    }
+  }
+}

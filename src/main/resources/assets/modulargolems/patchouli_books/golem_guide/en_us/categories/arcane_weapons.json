@@ -1,0 +1,6 @@
+{
+  "name": "Arcane Weapons",
+  "description": "Golem weapons that cast Ars Nouveau spells",
+  "icon": "modulargolems:arcane_golem_sword",
+  "flag": "mod:ars_nouveau"
+}

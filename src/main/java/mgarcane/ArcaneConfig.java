@@ -30,6 +30,8 @@ public class ArcaneConfig {
 	public final ModConfigSpec.IntValue surgeDuration;
 	public final ModConfigSpec.IntValue surgeCooldown;
 	public final ModConfigSpec.DoubleValue glyphChance;
+	public final ModConfigSpec.IntValue weaponCooldown;
+	public final ModConfigSpec.IntValue weaponMaxCost;
 
 	private ArcaneConfig(ModConfigSpec.Builder b) {
 		b.push("arcane");
@@ -65,6 +67,12 @@ public class ArcaneConfig {
 				.defineInRange("surgeCooldown", 400, 20, 24000);
 		glyphChance = b.comment("Glyph Strike: chance per hit to apply a glyph effect (also limited to once per second)")
 				.defineInRange("glyphChance", 0.2, 0, 1);
+		b.pop();
+		b.push("weapons");
+		weaponCooldown = b.comment("Arcane weapons: ticks between spell casts for one golem (Ars Nouveau does not charge mana to golems, so this is the limit)")
+				.defineInRange("weaponCooldown", 40, 1, 24000);
+		weaponMaxCost = b.comment("Arcane weapons: refuse to cast spells whose mana cost is above this. 0 = no limit")
+				.defineInRange("weaponMaxCost", 0, 0, 100000);
 		b.pop();
 	}
 

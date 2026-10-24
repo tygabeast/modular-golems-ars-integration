@@ -3,7 +3,7 @@ plugins {
     id 'net.neoforged.moddev' version '1.0.21'
 }
 
-version = '1.4.1'
+version = '1.5.0'
 group = 'mgarcane'
 base { archivesName = 'mg_arcane' }
 
@@ -29,7 +29,7 @@ dependencies {
 
 tasks.register('checkLibs') {
     doLast {
-        def need = ['modulargolems', 'l2core', 'Registrate', 'l2damagetracker', 'mob_weapon_api', 'l2serial']
+        def need = ['modulargolems', 'l2core', 'Registrate', 'l2damagetracker', 'mob_weapon_api', 'l2serial', 'ars_nouveau']
         def have = file('libs').listFiles()?.collect { it.name } ?: []
         need.each { n ->
             if (!have.any { it.toLowerCase().contains(n.toLowerCase()) })

@@ -39,9 +39,21 @@ Five upgrade items (Modular Golems' upgrades tab), each crafted at the Enchantin
 | Glyph Strike | Hits sometimes apply Hex, Shocked or Snared (Ars effects looked up by id; Slowness if missing) |
 Each has a Guide entry under Upgrades. Their numbers are in the `[upgrades]` section of the config.
 
+## Arcane weapons
+Golem weapons that cast an Ars Nouveau spell on hit, set up the same way as the Enchanter's Sword:
+place the weapon on a Scribe's Table, make a spell in your spell book, then shift-right click the table with that spell active.
+| Item | Notes |
+|---|---|
+| Arcane Golem Sword, Axe, Spear | Cast on every hit (cooldown). The spell must have no Form glyph: the weapon supplies Touch. |
+| Arcane Mecha Bow | Its arrows cast the spell where they hit (same Form rule). Multishot as the Modular Golems mecha bow. |
+Each is crafted at an Enchanting Apparatus from the matching diamond golem weapon (the bow from the iron mecha bow) and has a Guide entry under Arcane Weapons.
+Ars Nouveau charges no mana to non-player casters, so the limits are `weaponCooldown` (ticks between casts per golem) and the optional `weaponMaxCost` (refuse spells above this mana cost) in the `[weapons]` config section.
+The casting code uses Ars' `EntitySpellResolver` and `ICasterTool` (compile against Ars Nouveau 1.21.1-5.13.3: put its jar in `libs/` too).
+
 ## Config (`config/mg_arcane-common.toml`)
 * `targets` - who area abilities (Tremor, Quagmire, Ash Cloud) may affect besides the golem's own target:
   `HOSTILE` (default), `ALL_MOBS`, `ALL_MOBS_AND_PLAYERS`. The owner, the owner's pets and the owner's golems are never affected.
+* `[weapons]`: `weaponCooldown`, `weaponMaxCost`.
 * `[upgrades]`: `recallDistance`, `recallCooldown`, `spongeHeal`, `lightRadius`, `surgeDuration`, `surgeCooldown`, `glyphChance`.
 * `auraInterval`, `splashFraction`, `fangCooldown`, `lightningCooldown`, `lightningChance`, `lightningDamage`.
   Thunderstrike's bolt is visual only (no fire, never hurts the owner or pets); damage goes to the target and enemies within 2.5 blocks.

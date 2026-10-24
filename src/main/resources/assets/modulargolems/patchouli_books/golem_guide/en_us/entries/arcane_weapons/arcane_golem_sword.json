@@ -1,0 +1,14 @@
+{
+  "flag": "mod:ars_nouveau",
+  "name": "Arcane Golem Sword",
+  "icon": "modulargolems:arcane_golem_sword",
+  "category": "modulargolems:arcane_weapons",
+  "sortnum": 3000,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:arcane_golem_sword",
+      "text": "A golem sword that casts a spell on every hit, like the Enchanter's Sword. Place it on a Scribe's Table, make a spell in your spell book, then shift-right click the table with that spell active. The spell must not have a Form glyph: the weapon provides Touch.$(br2)Ars Nouveau does not charge golems mana, so casts are limited by a cooldown (and an optional cost cap) in the config. Crafted at an Enchanting Apparatus from the matching diamond golem weapon."
+    }
+  ]
+}

@@ -2,7 +2,7 @@ import sys, os, json, shutil
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from gen_tex import build_all, TYPES
 from mats import MATS
-import gen_upgrades
+import gen_upgrades, gen_weapons
 R = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'src', 'main', 'resources')
 shutil.rmtree(R, ignore_errors=True)
 # static metadata (mods.toml, LICENSE, NOTICE) lives in meta/ so a regeneration can never drop it
@@ -157,6 +157,7 @@ DESC.update({  # upgrade modifier descriptions (the %s values are filled in by t
  'glyph_strike': ('Glyph Strike', '%s chance per hit to lay Hex, Shocked or Snared on the target'),
 })
 gen_upgrades.build(w, R, lang, DESC)
+gen_weapons.build(w, R, lang)
 for i, (n, d) in DESC.items():
     lang[f'modifier.modulargolems.{i}'] = n; lang[f'modifier.modulargolems.{i}.desc'] = d
 w('assets/modulargolems/lang/en_us.json', dict(sorted(lang.items())))

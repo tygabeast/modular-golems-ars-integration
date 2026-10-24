@@ -1,0 +1,14 @@
+{
+  "flag": "mod:ars_nouveau",
+  "name": "Arcane Mecha Bow",
+  "icon": "modulargolems:arcane_mecha_bow",
+  "category": "modulargolems:arcane_weapons",
+  "sortnum": 3003,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:arcane_mecha_bow",
+      "text": "A golem mecha bow whose arrows cast a spell where they hit. Scribe it on a Scribe's Table like the Enchanter's Sword: no Form glyph, the bow provides Touch.$(br2)Ars Nouveau does not charge golems mana, so casts are limited by a cooldown (and an optional cost cap) in the config. Crafted at an Enchanting Apparatus from the matching diamond golem weapon."
+    }
+  ]
+}

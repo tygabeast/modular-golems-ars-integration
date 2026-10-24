@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "modulargolems:arcane_golem_sword",
+      "required": false
+    },
+    {
+      "id": "modulargolems:arcane_golem_axe",
+      "required": false
+    },
+    {
+      "id": "modulargolems:arcane_golem_spear",
+      "required": false
+    }
+  ]
+}

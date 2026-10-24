@@ -57,6 +57,10 @@ public class ArcaneReg {
 		upgrade("glyph_strike", Upgrades.GlyphStrike::new, "%s chance per hit to lay Hex, Shocked or Snared on the target", "Glyph Strike Upgrade");
 	}
 
+	static {
+		if (ModList.get().isLoaded(NOUVEAU)) CasterWeapons.register();
+	}
+
 	public static void register() {
 		// class initialisation performs all registration
 	}
