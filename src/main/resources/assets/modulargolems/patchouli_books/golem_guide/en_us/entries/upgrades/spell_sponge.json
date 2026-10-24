@@ -1,0 +1,14 @@
+{
+  "flag": "mod:ars_nouveau",
+  "name": "Spell Sponge Upgrade",
+  "icon": "modulargolems:spell_sponge",
+  "category": "modulargolems:upgrades",
+  "sortnum": 2001,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:spell_sponge",
+      "text": "Upgrade for golems. Magic damage, including Ars spells, is halved, and each magic hit heals the golem a little.$(br2)Crafted at an Enchanting Apparatus."
+    }
+  ]
+}

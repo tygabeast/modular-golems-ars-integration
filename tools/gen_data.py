@@ -2,6 +2,7 @@ import sys, os, json, shutil
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from gen_tex import build_all, TYPES
 from mats import MATS
+import gen_upgrades
 R = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'src', 'main', 'resources')
 shutil.rmtree(R, ignore_errors=True)
 # static metadata (mods.toml, LICENSE, NOTICE) lives in meta/ so a regeneration can never drop it
@@ -148,6 +149,14 @@ DESC = {  # id: (name, desc)
  'thunderstrike': ('Thunderstrike', 'Hits have a %s chance to call lightning for %s damage (cooldown %s seconds)'),
  'elemental_surge': ('Elemental Surge', 'Hits deal %s extra damage and cycle burn, chill, weaken and launch'),
 }
+DESC.update({  # upgrade modifier descriptions (the %s values are filled in by the code)
+ 'arcane_recall': ('Arcane Recall', 'Teleports back to its owner when idle and %s or more blocks away (cooldown %s seconds)'),
+ 'spell_sponge': ('Spell Sponge', 'Takes half damage from magic and heals %s health per magic hit'),
+ 'magelight_core': ('Magelight Core', 'Its owner gets Night Vision within %s blocks'),
+ 'source_surge': ('Source Surge', 'When its owner is hit by a mob, gains Speed and Strength for %s seconds (cooldown %s seconds)'),
+ 'glyph_strike': ('Glyph Strike', '%s chance per hit to lay Hex, Shocked or Snared on the target'),
+})
+gen_upgrades.build(w, R, lang, DESC)
 for i, (n, d) in DESC.items():
     lang[f'modifier.modulargolems.{i}'] = n; lang[f'modifier.modulargolems.{i}.desc'] = d
 w('assets/modulargolems/lang/en_us.json', dict(sorted(lang.items())))

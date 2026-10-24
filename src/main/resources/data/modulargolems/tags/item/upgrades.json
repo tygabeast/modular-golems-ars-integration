@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "modulargolems:arcane_recall",
+      "required": false
+    },
+    {
+      "id": "modulargolems:spell_sponge",
+      "required": false
+    },
+    {
+      "id": "modulargolems:magelight_core",
+      "required": false
+    },
+    {
+      "id": "modulargolems:source_surge",
+      "required": false
+    },
+    {
+      "id": "modulargolems:glyph_strike",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "flag": "mod:ars_nouveau",
+  "name": "Source Surge Upgrade",
+  "icon": "modulargolems:source_surge",
+  "category": "modulargolems:upgrades",
+  "sortnum": 2003,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:source_surge",
+      "text": "Upgrade for golems. When a mob hits you, nearby golems with this upgrade surge with Speed and Strength for a few seconds. Has a cooldown.$(br2)Crafted at an Enchanting Apparatus."
+    }
+  ]
+}

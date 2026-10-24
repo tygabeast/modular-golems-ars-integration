@@ -1,0 +1,14 @@
+{
+  "flag": "mod:ars_nouveau",
+  "name": "Glyph Strike Upgrade",
+  "icon": "modulargolems:glyph_strike",
+  "category": "modulargolems:upgrades",
+  "sortnum": 2004,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:glyph_strike",
+      "text": "Upgrade for golems. Hits sometimes lay a glyph effect on the target: Hex, Shocked or Snared (Slowness if Ars does not provide them). At most once per second.$(br2)Crafted at an Enchanting Apparatus."
+    }
+  ]
+}

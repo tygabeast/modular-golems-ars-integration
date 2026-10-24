@@ -23,6 +23,13 @@ public class ArcaneConfig {
 	public final ModConfigSpec.IntValue lightningCooldown;
 	public final ModConfigSpec.DoubleValue lightningChance;
 	public final ModConfigSpec.DoubleValue lightningDamage;
+	public final ModConfigSpec.DoubleValue recallDistance;
+	public final ModConfigSpec.IntValue recallCooldown;
+	public final ModConfigSpec.DoubleValue spongeHeal;
+	public final ModConfigSpec.DoubleValue lightRadius;
+	public final ModConfigSpec.IntValue surgeDuration;
+	public final ModConfigSpec.IntValue surgeCooldown;
+	public final ModConfigSpec.DoubleValue glyphChance;
 
 	private ArcaneConfig(ModConfigSpec.Builder b) {
 		b.push("arcane");
@@ -42,6 +49,22 @@ public class ArcaneConfig {
 				.defineInRange("lightningChance", 0.15, 0, 1);
 		lightningDamage = b.comment("Thunderstrike damage to the target and enemies within 2.5 blocks of it")
 				.defineInRange("lightningDamage", 8.0, 0, 200);
+		b.pop();
+		b.push("upgrades");
+		recallDistance = b.comment("Arcane Recall: blocks from the owner before an idle golem teleports back")
+				.defineInRange("recallDistance", 32.0, 8, 256);
+		recallCooldown = b.comment("Arcane Recall cooldown in ticks")
+				.defineInRange("recallCooldown", 600, 40, 24000);
+		spongeHeal = b.comment("Spell Sponge: health restored per magic hit (magic damage is also halved)")
+				.defineInRange("spongeHeal", 2.0, 0, 100);
+		lightRadius = b.comment("Magelight Core: blocks within which the owner gets Night Vision")
+				.defineInRange("lightRadius", 16.0, 2, 128);
+		surgeDuration = b.comment("Source Surge: duration of the speed and strength boost, in ticks")
+				.defineInRange("surgeDuration", 160, 20, 2400);
+		surgeCooldown = b.comment("Source Surge cooldown in ticks")
+				.defineInRange("surgeCooldown", 400, 20, 24000);
+		glyphChance = b.comment("Glyph Strike: chance per hit to apply a glyph effect (also limited to once per second)")
+				.defineInRange("glyphChance", 0.2, 0, 1);
 		b.pop();
 	}
 

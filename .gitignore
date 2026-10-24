@@ -1,0 +1,12 @@
+.gradle/
+build/
+run/
+libs/
+out/
+.idea/
+*.iml
+*.class
+__pycache__/
+tools/prev/
+.DS_Store
+*.log

@@ -1,0 +1,14 @@
+{
+  "flag": "mod:ars_nouveau",
+  "name": "Arcane Recall Upgrade",
+  "icon": "modulargolems:arcane_recall",
+  "category": "modulargolems:upgrades",
+  "sortnum": 2000,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:arcane_recall",
+      "text": "Upgrade for golems. When the golem is idle and strays too far from you, it teleports back to your side. Has a cooldown. Distance and cooldown can be set in the config.$(br2)Crafted at an Enchanting Apparatus."
+    }
+  ]
+}

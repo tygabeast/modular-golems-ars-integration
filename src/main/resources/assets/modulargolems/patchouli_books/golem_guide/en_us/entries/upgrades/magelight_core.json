@@ -1,0 +1,14 @@
+{
+  "flag": "mod:ars_nouveau",
+  "name": "Magelight Core Upgrade",
+  "icon": "modulargolems:magelight_core",
+  "category": "modulargolems:upgrades",
+  "sortnum": 2002,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:magelight_core",
+      "text": "Upgrade for golems. The golem glows with magelight: while you are close to it, you get Night Vision.$(br2)Crafted at an Enchanting Apparatus."
+    }
+  ]
+}

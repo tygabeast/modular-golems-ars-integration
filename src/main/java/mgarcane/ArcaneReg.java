@@ -4,6 +4,7 @@ import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import dev.xkmc.modulargolems.content.item.upgrade.CraftMaterialItem;
 import dev.xkmc.modulargolems.content.modifier.base.GolemModifier;
 import dev.xkmc.modulargolems.init.ModularGolems;
+import dev.xkmc.modulargolems.init.registrate.GolemItems;
 import dev.xkmc.modulargolems.init.registrate.GolemModifiers;
 import net.neoforged.fml.ModList;
 
@@ -40,6 +41,20 @@ public class ArcaneReg {
 		mat(ELEMANCY, "vapor", "scalding_steam", Mods.ScaldingSteam::new, "Hits deal %s extra damage");
 		mat(ELEMANCY, "tempest", "thunderstrike", Mods.Thunderstrike::new, "Hits have a %s chance to call lightning for %s damage (cooldown %s seconds)");
 		mat(ELEMANCY, "shard", "elemental_surge", Mods.ElementalSurge::new, "Hits deal %s extra damage and cycle burn, chill, weaken and launch");
+	}
+
+	/** Registers an upgrade item (a SimpleUpgradeItem in Modular Golems' upgrades tab) and its modifier. */
+	private static <T extends GolemModifier> void upgrade(String key, NonNullSupplier<T> mod, String desc, String name) {
+		var val = GolemModifiers.reg(key, mod, desc);
+		GolemItems.regModUpgrade(key, () -> val, MGArcane.MODID).lang(name).register();
+	}
+
+	static {
+		upgrade("arcane_recall", Upgrades.ArcaneRecall::new, "Teleports back to its owner when idle and %s or more blocks away (cooldown %s seconds)", "Arcane Recall Upgrade");
+		upgrade("spell_sponge", Upgrades.SpellSponge::new, "Takes half damage from magic and heals %s health per magic hit", "Spell Sponge Upgrade");
+		upgrade("magelight_core", Upgrades.MagelightCore::new, "Its owner gets Night Vision within %s blocks", "Magelight Core Upgrade");
+		upgrade("source_surge", Upgrades.SourceSurge::new, "When its owner is hit by a mob, gains Speed and Strength for %s seconds (cooldown %s seconds)", "Source Surge Upgrade");
+		upgrade("glyph_strike", Upgrades.GlyphStrike::new, "%s chance per hit to lay Hex, Shocked or Snared on the target", "Glyph Strike Upgrade");
 	}
 
 	public static void register() {
