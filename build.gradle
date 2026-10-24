@@ -3,7 +3,7 @@ plugins {
     id 'net.neoforged.moddev' version '1.0.21'
 }
 
-version = '1.4.0'
+version = '1.4.1'
 group = 'mgarcane'
 base { archivesName = 'mg_arcane' }
 
