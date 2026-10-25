@@ -56,7 +56,7 @@ The casting code uses Ars' `EntitySpellResolver` and `ICasterTool` (compile agai
 A set for Metal Golems in violet cloth and gold: Arcane Cowl, Tunic, Sash and Boots (armour 11 / 14 / 8 / 6, toughness 6, the same tier as Modular Golems' diamond-grade sets).
 The shapes are custom and deliberately restrained, with about the coverage of Wind Spirit: head and torso covered, short sleeves with forearm cuffs, a hip sash and low boots.
 Each piece worn adds one level of **Source Mantle**: 4% less magic damage and 1 health regained every 5 seconds per piece (full set: 16% and about 0.8 health per second).
-Crafted at an Enchanting Apparatus from the matching vanilla diamond armour piece, Source Gems and essences, and has a Guide entry under Arcane Armor.
+Crafted at an Enchanting Apparatus from the matching vanilla diamond armour piece, 4 Source Gems, 2 Abjuration Essence and 2 Magebloom Fiber (the same for every piece), and has a Guide entry under Arcane Armor.
 The shapes and textures come from one description (`tools/armor_spec.py`): `tools/gen_armor.py` paints the textures and `tools/gen_armor_java.py` writes `ArmorLayers.java` (client only).
 
 ## Config (`config/mg_arcane-common.toml`)

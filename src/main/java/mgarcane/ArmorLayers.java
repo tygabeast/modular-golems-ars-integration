@@ -88,11 +88,11 @@ public final class ArmorLayers {
 		PartDefinition body = root.getChild("body");
 		PartDefinition left_leg = root.getChild("left_leg");
 		PartDefinition right_leg = root.getChild("right_leg");
-		body.addOrReplaceChild("arc_sash", CubeListBuilder.create().texOffs(0, 0).addBox(-5.5f, 9.5f, -4f, 11f, 3f, 8f, new CubeDeformation(0f)), PartPose.offset(0f, 0f, 0f));
-		body.addOrReplaceChild("arc_tabard", CubeListBuilder.create().texOffs(26, 11).addBox(-3f, 12f, -4.75f, 6f, 6f, 1f, new CubeDeformation(0f)), PartPose.offset(0f, 0f, 0f));
-		body.addOrReplaceChild("arc_buckle", CubeListBuilder.create().texOffs(40, 11).addBox(-1f, 9.5f, -5f, 2f, 2f, 1f, new CubeDeformation(0f)), PartPose.offset(0f, 0f, 0f));
-		right_leg.addOrReplaceChild("arc_hip", CubeListBuilder.create().texOffs(0, 11).addBox(-4f, -9f, -3.5f, 7f, 5f, 6f, new CubeDeformation(0f)), PartPose.offset(0f, 0f, 0f));
-		left_leg.addOrReplaceChild("arc_hip_l", CubeListBuilder.create().texOffs(38, 0).addBox(-4f, -9f, -3.5f, 7f, 5f, 6f, new CubeDeformation(0f)), PartPose.offset(0f, 0f, 0f));
+		body.addOrReplaceChild("arc_sash", CubeListBuilder.create().texOffs(0, 12).addBox(-5.5f, 9.5f, -4f, 11f, 3f, 8f, new CubeDeformation(0f)), PartPose.offset(0f, 0f, 0f));
+		body.addOrReplaceChild("arc_tabard", CubeListBuilder.create().texOffs(38, 12).addBox(-3f, 12f, -4.75f, 6f, 6f, 1f, new CubeDeformation(0f)), PartPose.offset(0f, 0f, 0f));
+		body.addOrReplaceChild("arc_buckle", CubeListBuilder.create().texOffs(52, 12).addBox(-1f, 9.5f, -5f, 2f, 2f, 1f, new CubeDeformation(0f)), PartPose.offset(0f, 0f, 0f));
+		right_leg.addOrReplaceChild("arc_hip", CubeListBuilder.create().texOffs(28, 0).addBox(-4f, -4f, -4f, 7f, 5f, 7f, new CubeDeformation(0f)), PartPose.offset(0f, 0f, 0f));
+		left_leg.addOrReplaceChild("arc_hip_l", CubeListBuilder.create().texOffs(0, 0).addBox(-4f, -4f, -4f, 7f, 5f, 7f, new CubeDeformation(0f)), PartPose.offset(0f, 0f, 0f));
 		return LayerDefinition.create(mesh, 64, 32);
 	}
 

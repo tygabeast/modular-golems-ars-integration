@@ -3,19 +3,20 @@ import os
 import gen_armor, gen_armor_icons
 
 SG, ES = 'ars_nouveau:source_gem', 'ars_nouveau:{}_essence'
+PED = [SG] * 4 + [ES.format('abjuration')] * 2 + ['ars_nouveau:magebloom_fiber'] * 2   # the same for every piece
 PIECES = [  # spec piece, item key, display name, vanilla reagent, pedestals, source cost, enchantable tag, guide blurb
     dict(p='helmet', key='arcane_helmet', name='Arcane Cowl', reagent='minecraft:diamond_helmet', tag='head_armor',
-         ped=[SG] * 4 + [ES.format('abjuration')] * 2 + [ES.format('manipulation')] * 2, cost=3000, armor=11),
+         ped=PED, cost=3000, armor=11),
     dict(p='chestplate', key='arcane_chestplate', name='Arcane Tunic', reagent='minecraft:diamond_chestplate', tag='chest_armor',
-         ped=[SG] * 4 + [ES.format('abjuration')] * 4, cost=5000, armor=14),
+         ped=PED, cost=5000, armor=14),
     dict(p='leggings', key='arcane_shinguard', name='Arcane Sash', reagent='minecraft:diamond_leggings', tag='leg_armor',
-         ped=[SG] * 4 + [ES.format('abjuration')] * 2 + [ES.format('earth')] * 2, cost=4000, armor=8),
+         ped=PED, cost=4000, armor=8),
     dict(p='boots', key='arcane_boots', name='Arcane Boots', reagent='minecraft:diamond_boots', tag='foot_armor',
-         ped=[SG] * 4 + [ES.format('abjuration')] * 2 + [ES.format('air')] * 2, cost=3000, armor=6),
+         ped=PED, cost=3000, armor=6),
 ]
 GUIDE = ('Part of the Arcane armour for Metal Golems: violet cloth and gold, in the manner of the Battlemage outfit. Each piece worn gives the golem one level of '
          'Source Mantle: 4%% less magic damage and 1 health regained every 5 seconds, so the full set gives 16%% and about 0.8 health per second. '
-         'Armour %d, toughness 6 (diamond tier). Crafted at an Enchanting Apparatus from the matching diamond armour piece.')
+         'Armour %d, toughness 6 (diamond tier). Crafted at an Enchanting Apparatus from the matching diamond armour piece, four Source Gems, two Abjuration Essence and two Magebloom Fiber.')
 
 
 def build(w, R, lang):

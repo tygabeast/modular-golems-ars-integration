@@ -58,7 +58,7 @@ def leggings():
         ('tabard', 'body', Z, [('sash', -3, 12, -4.75, 6, 6, 1)]),
         ('buckle', 'body', Z, [('silver', -1, 9.5, -5, 2, 2, 1)]),
     ]
-    leg = [('hip', 'right_leg', (0, 0, 0, 0, 0, 0), [('sash', -4, -9, -3.5, 7, 5, 6)])]
+    leg = [('hip', 'right_leg', Z, [('sash', -4, -4, -4, 7, 5, 7)])]   # a cuff around the top of the leg, so it swings with the leg
     return body + leg + mir_leg(leg, '_l')
 
 
