@@ -156,6 +156,7 @@ DESC.update({  # upgrade modifier descriptions (the %s values are filled in by t
  'source_surge': ('Source Surge', 'When its owner is hit by a mob, gains Speed and Strength for %s seconds (cooldown %s seconds)'),
  'glyph_strike': ('Glyph Strike', '%s chance per hit to lay Hex, Shocked or Snared on the target'),
  'source_mantle': ('Source Mantle', 'Take %s less magic damage and regain %s health every %s seconds'),
+ 'elemental_ward': ('Elemental Ward', 'Take %s less fire, lightning, freezing and explosion damage'),
 })
 gen_upgrades.build(w, R, lang, DESC)
 gen_weapons.build(w, R, lang)

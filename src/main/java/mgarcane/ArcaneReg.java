@@ -60,11 +60,14 @@ public class ArcaneReg {
 
 	/** Granted by every piece of Arcane armour (one level each). Only registered together with the armour. */
 	static Val<Mods.SourceMantle> MANTLE;
+	/** Granted by every piece of Aegis armour (one level each). */
+	static Val<Mods.ElementalWard> WARD;
 
 	static {
 		if (ModList.get().isLoaded(NOUVEAU)) {
 			CasterWeapons.register();
 			MANTLE = GolemModifiers.reg("source_mantle", Mods.SourceMantle::new, "Take %s less magic damage and regain %s health every %s seconds");
+			WARD = GolemModifiers.reg("elemental_ward", Mods.ElementalWard::new, "Take %s less fire, lightning, freezing and explosion damage");
 			ArcaneArmor.register();
 		}
 	}

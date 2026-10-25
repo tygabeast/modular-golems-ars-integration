@@ -59,11 +59,17 @@ Each piece worn adds one level of **Source Mantle**: 4% less magic damage and 1 
 Crafted at an Enchanting Apparatus from the matching vanilla diamond armour piece, 4 Source Gems, 2 Abjuration Essence and 2 Magebloom Fiber (the same for every piece), and has a Guide entry under Arcane Armor.
 The shapes and textures come from one description (`tools/armor_spec.py`): `tools/gen_armor.py` paints the textures and `tools/gen_armor_java.py` writes `ArmorLayers.java` (client only).
 
+### Aegis armour (the upgrade of the Arcane set)
+Ivory plate with gold trim, four elemental gems and dark navy boots, in the manner of Ars Elemancy's Omniguard set (all art is original): Aegis Helm, Cuirass, Tassets and Boots (armour 14 / 18 / 10 / 10, toughness 8, netherite tier).
+Each piece worn adds one level of **Elemental Ward**: 5% less fire, lightning, freezing and explosion damage per piece (full set: 20%). It uses vanilla damage categories, so it needs no Ars Elemental or Elemancy.
+Crafted at an Enchanting Apparatus from the matching Arcane piece, 2 Source Gems, one each of the Fire, Water, Earth and Air Essences and 2 Magebloom Fiber. Guide entries are under Arcane Armor.
+`tools/aegis_spec.py` and `tools/gen_aegis.py` hold its shapes and textures.
+
 ## Config (`config/mg_arcane-common.toml`)
 * `targets` - who area abilities (Tremor, Quagmire, Ash Cloud) may affect besides the golem's own target:
   `HOSTILE` (default), `ALL_MOBS`, `ALL_MOBS_AND_PLAYERS`. The owner, the owner's pets and the owner's golems are never affected.
 * `[weapons]`: `weaponCooldown`, `weaponMaxCost`, `shoulderCooldown`, `shoulderRange`.
-* `[armor]`: `mantleReduction`, `mantleHeal`, `mantleInterval` (Source Mantle, per piece worn).
+* `[armor]`: `mantleReduction`, `mantleHeal`, `mantleInterval` (Source Mantle, per piece worn), `wardReduction` (Elemental Ward, per piece worn).
 * `[upgrades]`: `recallDistance`, `recallCooldown`, `spongeHeal`, `lightRadius`, `surgeDuration`, `surgeCooldown`, `glyphChance`.
 * `auraInterval`, `splashFraction`, `fangCooldown`, `lightningCooldown`, `lightningChance`, `lightningDamage`.
   Thunderstrike's bolt is visual only (no fire, never hurts the owner or pets); damage goes to the target and enemies within 2.5 blocks.

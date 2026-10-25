@@ -32,7 +32,7 @@ public class ArcaneConfig {
 	public final ModConfigSpec.DoubleValue glyphChance;
 	public final ModConfigSpec.IntValue weaponCooldown;
 	public final ModConfigSpec.IntValue weaponMaxCost, shoulderCooldown, shoulderRange;
-	public final ModConfigSpec.DoubleValue mantleReduction, mantleHeal;
+	public final ModConfigSpec.DoubleValue mantleReduction, mantleHeal, wardReduction;
 	public final ModConfigSpec.IntValue mantleInterval;
 
 	private ArcaneConfig(ModConfigSpec.Builder b) {
@@ -87,6 +87,8 @@ public class ArcaneConfig {
 				.defineInRange("mantleHeal", 1.0, 0, 100);
 		mantleInterval = b.comment("Source Mantle: ticks between heals (20 = one second)")
 				.defineInRange("mantleInterval", 100, 20, 24000);
+		wardReduction = b.comment("Elemental Ward (Aegis armour): fraction of fire, lightning, freezing and explosion damage negated per piece worn")
+				.defineInRange("wardReduction", 0.05, 0, 0.25);
 		b.pop();
 	}
 

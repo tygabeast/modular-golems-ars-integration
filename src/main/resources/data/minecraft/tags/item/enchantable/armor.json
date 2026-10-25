@@ -15,6 +15,22 @@
     {
       "id": "modulargolems:arcane_boots",
       "required": false
+    },
+    {
+      "id": "modulargolems:aegis_helmet",
+      "required": false
+    },
+    {
+      "id": "modulargolems:aegis_chestplate",
+      "required": false
+    },
+    {
+      "id": "modulargolems:aegis_shinguard",
+      "required": false
+    },
+    {
+      "id": "modulargolems:aegis_boots",
+      "required": false
     }
   ]
 }

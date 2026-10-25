@@ -255,6 +255,27 @@ public final class Mods {
 		}
 	}
 
+	/** Aegis armour: each piece worn adds a level. Resists fire, lightning, freezing and explosion damage. */
+	public static class ElementalWard extends GolemModifier {
+		private static final ResourceLocation ID = id("ward_elemental");
+
+		public ElementalWard() {
+			super(StatFilterType.HEALTH, 4);
+		}
+
+		@Override
+		public void onDamaged(AbstractGolemEntity<?, ?> g, DamageData.Defence d, int lv) {
+			var s = d.getSource();
+			if (s.is(DamageTypeTags.IS_FIRE) || s.is(DamageTypeTags.IS_LIGHTNING) || s.is(DamageTypeTags.IS_FREEZING) || s.is(DamageTypeTags.IS_EXPLOSION))
+				d.addDealtModifier(DamageModifier.multTotal(1f - (float) (ArcaneConfig.COMMON.wardReduction.get() * lv), ID));
+		}
+
+		@Override
+		public List<MutableComponent> getDetail(int lv) {
+			return desc(this, Arc.pct(ArcaneConfig.COMMON.wardReduction.get() * lv));
+		}
+	}
+
 	/** Manipulation essence: hits drag the target toward the golem. */
 	public static class Telekinesis extends GolemModifier {
 		public Telekinesis() {

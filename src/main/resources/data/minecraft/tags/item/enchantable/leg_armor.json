@@ -3,6 +3,10 @@
     {
       "id": "modulargolems:arcane_shinguard",
       "required": false
+    },
+    {
+      "id": "modulargolems:aegis_shinguard",
+      "required": false
     }
   ]
 }

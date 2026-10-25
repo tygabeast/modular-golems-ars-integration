@@ -1,0 +1,14 @@
+{
+  "flag": "mod:ars_nouveau",
+  "name": "Aegis Cuirass",
+  "icon": "modulargolems:aegis_chestplate",
+  "category": "modulargolems:arcane_armor",
+  "sortnum": 3601,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:aegis_chestplate",
+      "text": "Part of the Aegis armour for Metal Golems: ivory plate, gold trim and the four elemental gems, in the manner of the Omniguard set, and the upgrade of the Arcane armour. Each piece worn gives the golem one level of Elemental Ward: 5% less fire, lightning, freezing and explosion damage, so the full set gives 20%. Armour 18, toughness 8 (netherite tier). Crafted at an Enchanting Apparatus from the matching Arcane armour piece, 2 Source Gems, one each of the Fire, Water, Earth and Air Essences and 2 Magebloom Fiber."
+    }
+  ]
+}

@@ -3,6 +3,10 @@
     {
       "id": "modulargolems:arcane_helmet",
       "required": false
+    },
+    {
+      "id": "modulargolems:aegis_helmet",
+      "required": false
     }
   ]
 }
