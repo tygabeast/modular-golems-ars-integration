@@ -31,7 +31,7 @@ public class ArcaneConfig {
 	public final ModConfigSpec.IntValue surgeCooldown;
 	public final ModConfigSpec.DoubleValue glyphChance;
 	public final ModConfigSpec.IntValue weaponCooldown;
-	public final ModConfigSpec.IntValue weaponMaxCost;
+	public final ModConfigSpec.IntValue weaponMaxCost, shoulderCooldown, shoulderRange;
 
 	private ArcaneConfig(ModConfigSpec.Builder b) {
 		b.push("arcane");
@@ -73,6 +73,10 @@ public class ArcaneConfig {
 				.defineInRange("weaponCooldown", 40, 1, 24000);
 		weaponMaxCost = b.comment("Arcane weapons: refuse to cast spells whose mana cost is above this. 0 = no limit")
 				.defineInRange("weaponMaxCost", 0, 0, 100000);
+		shoulderCooldown = b.comment("Arcane Shoulder Wand: ticks between shots for one wand")
+				.defineInRange("shoulderCooldown", 40, 5, 24000);
+		shoulderRange = b.comment("Arcane Shoulder Wand: farthest target distance, in blocks, it will fire at")
+				.defineInRange("shoulderRange", 24, 1, 128);
 		b.pop();
 	}
 

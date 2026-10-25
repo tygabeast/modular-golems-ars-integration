@@ -143,6 +143,20 @@ def spear(big=True):
     return c.image()
 
 
+def wand():
+    """16x16 item icon: gold-capped wooden wand with a faceted crystal head and a glint."""
+    c = Canvas(16, 1, 14)
+    c.put(0, 0, GOLD[2]); c.put(1, 0, GOLD[1])
+    for t in range(2, 7): c.put(t, 0, WOOD[t % 2])
+    for w, col in ((-1, GOLD[0]), (0, GOLD[1]), (1, GOLD[2])): c.put(7, w, col)
+    for i, hw in enumerate([1, 1, 1, 1, 0]):
+        for w in range(-hw, hw + 1):
+            c.put(8 + i, w, CRY[0] if w == -hw and hw else CRY[3] if w == hw and hw else GLOW if (w == 0 and i == 2) else CRY[1])
+    c.put(13, 0, GLOW)
+    c.outline()
+    return c.image()
+
+
 def bow():
     """16x16 mecha bow: jointed crystal limbs, gold riser block with a gem, cam wheels at the tips, glowing string."""
     import math
@@ -177,11 +191,13 @@ def bow():
 
 
 def build_all():
+    import gen_icons
     return {
-        'sword': sword(True), 'sword_icon': sword(False),
-        'axe': axe(True), 'axe_icon': axe(False),
-        'spear': spear(True), 'spear_icon': spear(False),
-        'bow': bow(),
+        'sword': sword(True), 'sword_icon': gen_icons.sword(),
+        'axe': axe(True), 'axe_icon': gen_icons.axe(),
+        'spear': spear(True), 'spear_icon': gen_icons.spear(),
+        'bow': gen_icons.bow(),
+        'wand': gen_icons.wand(),
     }
 
 
@@ -202,6 +218,8 @@ WEAPONS = [  # key, display name, vanilla-golem reagent, pedestal items, source 
          ped=[SG] * 4 + [ES.format('earth')] * 2 + [ES.format('manipulation'), ES.format('fire')], cost=4000),
     dict(key='arcane_golem_spear', kind='spear', name='Arcane Golem Spear', reagent='modulargolems:diamond_golem_spear',
          ped=[SG] * 4 + [ES.format('air')] * 2 + [ES.format('manipulation'), ES.format('conjuration')], cost=4000),
+    dict(key='arcane_shoulder_wand', kind='wand', name='Arcane Shoulder Wand', reagent='ars_nouveau:wand',
+         ped=[SG] * 4 + [ES.format('air')] * 2 + [ES.format('manipulation')] * 2, cost=4000),
     dict(key='arcane_mecha_bow', kind='bow', name='Arcane Mecha Bow', reagent='modulargolems:iron_mecha_bow',
          ped=[SG] * 4 + [ES.format('air')] * 2 + [ES.format('conjuration')] * 2, cost=4000),
 ]
@@ -209,6 +227,7 @@ GUIDE = {
     'sword': 'A golem sword that casts a spell on every hit, like the Enchanter\'s Sword. Place it on a Scribe\'s Table, make a spell in your spell book, then shift-right click the table with that spell active. The spell must not have a Form glyph: the weapon provides Touch.',
     'axe': 'A golem axe that casts a spell on hit. Scribe it exactly like the Enchanter\'s Sword: no Form glyph, the weapon provides Touch.',
     'spear': 'A golem spear that casts a spell on hit. Scribe it exactly like the Enchanter\'s Sword: no Form glyph, the weapon provides Touch.',
+    'wand': 'A shoulder weapon for Metal Golems, based on the Enchanter\'s Wand. Place it on a Scribe\'s Table, make a spell in your spell book, then shift-right click the table with that spell active. The spell must not have a Form glyph: the wand provides Projectile and Accelerate. The golem fires it at its target. Crafted from an Enchanter\'s Wand.',
     'bow': 'A golem mecha bow that fires spell arrows, like the Enchanter\'s Bow. Place it on a Scribe\'s Table, make a spell in your spell book, then shift-right click the table with that spell active. The spell must not have a Form glyph: the bow provides Projectile. It needs no arrows. Without a spell it is an ordinary mecha bow.',
 }
 NOTE = '$(br2)Ars Nouveau does not charge golems mana, so casts are limited by a cooldown (and an optional cost cap) in the config. Crafted at an Enchanting Apparatus from the matching diamond golem weapon.'
@@ -229,7 +248,12 @@ def build(w, R, lang):
         'name': 'Arcane Weapons', 'description': 'Golem weapons that cast Ars Nouveau spells', 'icon': 'modulargolems:arcane_golem_sword', 'flag': 'mod:ars_nouveau'})
     for i, wp in enumerate(WEAPONS):
         k, kind = wp['key'], wp['kind']
-        if kind == 'bow':
+        if kind == 'wand':
+            imgs['wand'].save(f'{d}/{k}.png')
+            w(f'assets/modulargolems/models/item/{k}.json', {'parent': 'minecraft:item/handheld', 'textures': {'layer0': f'modulargolems:item/equipments/{k}'}})
+            import gen_shoulder_entity
+            gen_shoulder_entity.build().save(f'{e}/{k}.png')
+        elif kind == 'bow':
             imgs['bow'].save(f'{d}/{k}.png')
             w(f'assets/modulargolems/models/item/{k}.json', {'parent': 'minecraft:item/generated', 'textures': {'layer0': f'modulargolems:item/equipments/{k}'}})
         else:

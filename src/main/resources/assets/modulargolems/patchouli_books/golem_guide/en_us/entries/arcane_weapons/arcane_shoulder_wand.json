@@ -1,0 +1,14 @@
+{
+  "flag": "mod:ars_nouveau",
+  "name": "Arcane Shoulder Wand",
+  "icon": "modulargolems:arcane_shoulder_wand",
+  "category": "modulargolems:arcane_weapons",
+  "sortnum": 3003,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "modulargolems:arcane_shoulder_wand",
+      "text": "A shoulder weapon for Metal Golems, based on the Enchanter's Wand. Place it on a Scribe's Table, make a spell in your spell book, then shift-right click the table with that spell active. The spell must not have a Form glyph: the wand provides Projectile and Accelerate. The golem fires it at its target. Crafted from an Enchanter's Wand.$(br2)Ars Nouveau does not charge golems mana, so casts are limited by a cooldown (and an optional cost cap) in the config. Crafted at an Enchanting Apparatus from the matching diamond golem weapon."
+    }
+  ]
+}

@@ -46,14 +46,16 @@ place the weapon on a Scribe's Table, make a spell in your spell book, then shif
 |---|---|
 | Arcane Golem Sword, Axe, Spear | Cast on every hit (cooldown). The spell must have no Form glyph: the weapon supplies Touch. |
 | Arcane Mecha Bow | Works like the Enchanter's Bow: the table adds a Projectile glyph (so the spell still may not have a Form glyph) and the golem fires spell arrows that resolve the spell where they land. No arrows needed. Un-scribed, it is a normal mecha bow that uses arrows. |
-Each is crafted at an Enchanting Apparatus from the matching diamond golem weapon (the bow from the iron mecha bow) and has a Guide entry under Arcane Weapons.
+| Arcane Shoulder Wand | Based on the Enchanter's Wand, for a Metal Golem's shoulder slot. The table adds Projectile and Accelerate (so the spell may not have a Form glyph) and the golem fires the spell at its target, on its own cooldown and range. Reuses the Beacon Cannon's shoulder model, aim and swing-up animation, painted as a wand. |
+Like Ars' own gear, a scribed weapon shows its spell as glyph icons in the tooltip (names while Shift is held, or always if Ars' `glyphTooltips` setting is off).
+Each is crafted at an Enchanting Apparatus from the matching diamond golem weapon (the bow from the iron mecha bow, the wand from an Enchanter's Wand) and has a Guide entry under Arcane Weapons.
 Ars Nouveau charges no mana to non-player casters, so the limits are `weaponCooldown` (ticks between casts per golem) and the optional `weaponMaxCost` (refuse spells above this mana cost) in the `[weapons]` config section.
 The casting code uses Ars' `EntitySpellResolver` and `ICasterTool` (compile against Ars Nouveau 1.21.1-5.13.3: put its jar in `libs/` too).
 
 ## Config (`config/mg_arcane-common.toml`)
 * `targets` - who area abilities (Tremor, Quagmire, Ash Cloud) may affect besides the golem's own target:
   `HOSTILE` (default), `ALL_MOBS`, `ALL_MOBS_AND_PLAYERS`. The owner, the owner's pets and the owner's golems are never affected.
-* `[weapons]`: `weaponCooldown`, `weaponMaxCost`.
+* `[weapons]`: `weaponCooldown`, `weaponMaxCost`, `shoulderCooldown`, `shoulderRange`.
 * `[upgrades]`: `recallDistance`, `recallCooldown`, `spongeHeal`, `lightRadius`, `surgeDuration`, `surgeCooldown`, `glyphChance`.
 * `auraInterval`, `splashFraction`, `fangCooldown`, `lightningCooldown`, `lightningChance`, `lightningDamage`.
   Thunderstrike's bolt is visual only (no fire, never hurts the owner or pets); damage goes to the target and enemies within 2.5 blocks.

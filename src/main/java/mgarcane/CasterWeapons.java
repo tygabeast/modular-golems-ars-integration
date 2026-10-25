@@ -10,6 +10,7 @@ import com.hollingsworth.arsnouveau.api.spell.SpellCaster;
 import com.hollingsworth.arsnouveau.api.spell.SpellContext;
 import com.hollingsworth.arsnouveau.api.spell.wrapped_caster.LivingCaster;
 import com.hollingsworth.arsnouveau.common.entity.EntitySpellArrow;
+import com.hollingsworth.arsnouveau.common.spell.augment.AugmentAccelerate;
 import com.hollingsworth.arsnouveau.common.spell.method.MethodProjectile;
 import com.hollingsworth.arsnouveau.common.spell.method.MethodTouch;
 import com.hollingsworth.arsnouveau.common.util.PortUtil;
@@ -18,7 +19,11 @@ import dev.xkmc.l2damagetracker.contents.attack.DamageData;
 import dev.xkmc.modulargolems.content.entity.metalgolem.MetalGolemEntity;
 import dev.xkmc.modulargolems.content.item.equipments.IAttackListenerWeapon;
 import dev.xkmc.modulargolems.content.item.equipments.MetalGolemWeaponItem;
+import dev.xkmc.modulargolems.content.item.ranged.CannonPoseUtil;
 import dev.xkmc.modulargolems.content.item.ranged.GolemMechaBowBehavior;
+import dev.xkmc.modulargolems.content.item.ranged.IShoulderCannonAnimated;
+import dev.xkmc.modulargolems.content.item.ranged.ShouldWeaponItem;
+import dev.xkmc.modulargolems.content.client.armor.GolemModelPaths;
 import dev.xkmc.modulargolems.content.item.ranged.MetalGolemBowItem;
 import dev.xkmc.modulargolems.content.item.ranged.MetalGolemMechaBowItem;
 import dev.xkmc.modulargolems.init.ModularGolems;
@@ -133,7 +138,12 @@ public final class CasterWeapons {
 		@Override
 		public void appendHoverText(ItemStack stack, Item.TooltipContext ctx, List<Component> list, net.minecraft.world.item.TooltipFlag flag) {
 			super.appendHoverText(stack, ctx, list, flag);
-			getInformation(stack, ctx, list, flag);
+			Tips.text(this, stack, ctx, list, flag);
+		}
+
+		@Override
+		public java.util.Optional<net.minecraft.world.inventory.tooltip.TooltipComponent> getTooltipImage(ItemStack stack) {
+			return Tips.image(this, stack);
 		}
 	}
 
@@ -168,7 +178,12 @@ public final class CasterWeapons {
 		@Override
 		public void appendHoverText(ItemStack stack, Item.TooltipContext ctx, List<Component> list, net.minecraft.world.item.TooltipFlag flag) {
 			super.appendHoverText(stack, ctx, list, flag);
-			getInformation(stack, ctx, list, flag);
+			Tips.text(this, stack, ctx, list, flag);
+		}
+
+		@Override
+		public java.util.Optional<net.minecraft.world.inventory.tooltip.TooltipComponent> getTooltipImage(ItemStack stack) {
+			return Tips.image(this, stack);
 		}
 	}
 
@@ -224,6 +239,81 @@ public final class CasterWeapons {
 				(user, stack) -> stack.getItem() instanceof Bow ? new BowBehavior() : new GolemMechaBowBehavior(), 10));
 	}
 
+
+	// ---- shoulder ---------------------------------------------------------------------------------------------------
+
+	/**
+	 * Works like the Enchanter's Wand, worn on a Metal Golem's shoulder: the Scribe's Table puts Projectile and Accelerate in
+	 * front of the scribed spell (a spell with its own Form glyph is refused) and the golem fires it at its target.
+	 * It reuses the Beacon Cannon's shoulder model, pose and swing-up animation, painted as a wand.
+	 */
+	public static class ShoulderWand extends ShouldWeaponItem implements ICasterTool, IShoulderCannonAnimated {
+
+		public ShoulderWand(Item.Properties p) {
+			super(withCaster(p.stacksTo(1)));
+		}
+
+		@Override
+		public boolean isScribedSpellValid(AbstractCaster<?> caster, Player player, InteractionHand hand, ItemStack stack, Spell spell) {
+			return noForm(spell);
+		}
+
+		@Override
+		public void sendInvalidMessage(Player player) {
+			PortUtil.sendMessageNoSpam(player, Component.translatable("ars_nouveau.wand.invalid"));
+		}
+
+		@Override
+		public void scribeModifiedSpell(AbstractCaster<?> caster, Player player, InteractionHand hand, ItemStack stack, Spell.Mutable spell) {
+			List<AbstractSpellPart> list = new ArrayList<>();
+			list.add(MethodProjectile.INSTANCE);
+			list.add(AugmentAccelerate.INSTANCE);
+			list.addAll(spell.recipe);
+			spell.recipe = list;
+		}
+
+		@Override
+		public ResourceLocation getModelForHand(InteractionHand hand) {
+			return hand == InteractionHand.MAIN_HAND ? GolemModelPaths.BEACON_RIGHT : GolemModelPaths.BEACON_LEFT;
+		}
+
+		@Override
+		public ResourceLocation getAnimBaseId(MetalGolemEntity golem, ItemStack stack, InteractionHand hand) {
+			return hand == InteractionHand.MAIN_HAND ? GolemModelPaths.BEACON_RIGHT : GolemModelPaths.BEACON_LEFT;
+		}
+
+		@Override
+		public void onTick(MetalGolemEntity golem, ItemStack stack, InteractionHand hand) {
+			// cheap gates first: server side, every 5th tick, only while there is a live target
+			if (golem.level().isClientSide() || (golem.tickCount + (hand == InteractionHand.MAIN_HAND ? 0 : 2)) % 5 != 0) return;
+			LivingEntity target = golem.getTarget();
+			if (target == null || !target.isAlive()) return;
+			double range = ArcaneConfig.COMMON.shoulderRange.get();
+			if (golem.distanceToSqr(target) > range * range || CannonPoseUtil.BEACON_CANNON.isOutOfRange(golem, hand)) return;
+			AbstractCaster<?> caster = getSpellCaster(stack);
+			if (caster == null || !(golem.level() instanceof ServerLevel sl)) return;
+			Spell spell = caster.getSpell();
+			if (spell.isEmpty()) return;
+			int cap = ArcaneConfig.COMMON.weaponMaxCost.get();
+			if (cap > 0 && spell.getCost() > cap) return;
+			if (!Arc.ready(golem, COOLDOWN_KEY + hand.ordinal(), ArcaneConfig.COMMON.shoulderCooldown.get())) return;
+			Spell s = caster.modifySpellBeforeCasting(sl, golem, hand, spell);
+			SpellContext ctx = new SpellContext(sl, s, golem, new LivingCaster(golem), stack);
+			new EntitySpellResolver(ctx).onCast(stack, sl);
+		}
+
+		@Override
+		public void appendHoverText(ItemStack stack, Item.TooltipContext ctx, List<Component> list, net.minecraft.world.item.TooltipFlag flag) {
+			super.appendHoverText(stack, ctx, list, flag);
+			Tips.text(this, stack, ctx, list, flag);
+		}
+
+		@Override
+		public java.util.Optional<net.minecraft.world.inventory.tooltip.TooltipComponent> getTooltipImage(ItemStack stack) {
+			return Tips.image(this, stack);
+		}
+	}
+
 	// ---- registration -----------------------------------------------------------------------------------------------
 
 	/** One material for the whole family: modulargolems:arcane_golem_sword / _axe / _spear. */
@@ -262,6 +352,7 @@ public final class CasterWeapons {
 	static void register() {
 		for (GolemWeaponType t : GolemWeaponType.values()) t.buildItem(MATERIAL);
 		ModularGolems.REGISTRATE.item("arcane_mecha_bow", Bow::new).tag(ItemTags.BOW_ENCHANTABLE).lang("Arcane Mecha Bow").register();
+		ModularGolems.REGISTRATE.item("arcane_shoulder_wand", ShoulderWand::new).lang("Arcane Shoulder Wand").register();
 	}
 
 }

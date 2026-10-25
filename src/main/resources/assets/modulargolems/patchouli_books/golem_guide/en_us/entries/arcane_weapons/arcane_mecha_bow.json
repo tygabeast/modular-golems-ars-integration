@@ -3,7 +3,7 @@
   "name": "Arcane Mecha Bow",
   "icon": "modulargolems:arcane_mecha_bow",
   "category": "modulargolems:arcane_weapons",
-  "sortnum": 3003,
+  "sortnum": 3004,
   "pages": [
     {
       "type": "patchouli:spotlight",
