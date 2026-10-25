@@ -2,6 +2,8 @@ package mgarcane;
 
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
+import net.neoforged.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 
@@ -14,6 +16,7 @@ public class MGArcane {
 		container.registerConfig(ModConfig.Type.COMMON, ArcaneConfig.SPEC);
 		// Modular Golems is ordered BEFORE this mod, so its registrates already exist.
 		ArcaneReg.register();
+		if (ModList.get().isLoaded("ars_nouveau")) bus.addListener((FMLLoadCompleteEvent e) -> CasterWeapons.onLoadComplete(e));
 	}
 
 }

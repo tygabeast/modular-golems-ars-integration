@@ -209,7 +209,7 @@ GUIDE = {
     'sword': 'A golem sword that casts a spell on every hit, like the Enchanter\'s Sword. Place it on a Scribe\'s Table, make a spell in your spell book, then shift-right click the table with that spell active. The spell must not have a Form glyph: the weapon provides Touch.',
     'axe': 'A golem axe that casts a spell on hit. Scribe it exactly like the Enchanter\'s Sword: no Form glyph, the weapon provides Touch.',
     'spear': 'A golem spear that casts a spell on hit. Scribe it exactly like the Enchanter\'s Sword: no Form glyph, the weapon provides Touch.',
-    'bow': 'A golem mecha bow whose arrows cast a spell where they hit. Scribe it on a Scribe\'s Table like the Enchanter\'s Sword: no Form glyph, the bow provides Touch.',
+    'bow': 'A golem mecha bow that fires spell arrows, like the Enchanter\'s Bow. Place it on a Scribe\'s Table, make a spell in your spell book, then shift-right click the table with that spell active. The spell must not have a Form glyph: the bow provides Projectile. It needs no arrows. Without a spell it is an ordinary mecha bow.',
 }
 NOTE = '$(br2)Ars Nouveau does not charge golems mana, so casts are limited by a cooldown (and an optional cost cap) in the config. Crafted at an Enchanting Apparatus from the matching diamond golem weapon.'
 
@@ -219,6 +219,11 @@ def build(w, R, lang):
     d = f'{R}/assets/modulargolems/textures/item/equipments'
     os.makedirs(d, exist_ok=True)
     imgs = build_all()
+    import gen_bow_entity
+    e = f'{R}/assets/modulargolems/textures/equipments'
+    os.makedirs(e, exist_ok=True)
+    gen_bow_entity.build(False).save(f'{e}/arcane_mecha_bow.png')
+    gen_bow_entity.build(True).save(f'{e}/arcane_mecha_bow_pulling.png')
     cat = 'modulargolems:arcane_weapons'
     w('assets/modulargolems/patchouli_books/golem_guide/en_us/categories/arcane_weapons.json', {
         'name': 'Arcane Weapons', 'description': 'Golem weapons that cast Ars Nouveau spells', 'icon': 'modulargolems:arcane_golem_sword', 'flag': 'mod:ars_nouveau'})

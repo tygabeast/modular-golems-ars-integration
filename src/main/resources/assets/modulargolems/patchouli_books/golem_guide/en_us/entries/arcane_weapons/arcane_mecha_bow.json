@@ -8,7 +8,7 @@
     {
       "type": "patchouli:spotlight",
       "item": "modulargolems:arcane_mecha_bow",
-      "text": "A golem mecha bow whose arrows cast a spell where they hit. Scribe it on a Scribe's Table like the Enchanter's Sword: no Form glyph, the bow provides Touch.$(br2)Ars Nouveau does not charge golems mana, so casts are limited by a cooldown (and an optional cost cap) in the config. Crafted at an Enchanting Apparatus from the matching diamond golem weapon."
+      "text": "A golem mecha bow that fires spell arrows, like the Enchanter's Bow. Place it on a Scribe's Table, make a spell in your spell book, then shift-right click the table with that spell active. The spell must not have a Form glyph: the bow provides Projectile. It needs no arrows. Without a spell it is an ordinary mecha bow.$(br2)Ars Nouveau does not charge golems mana, so casts are limited by a cooldown (and an optional cost cap) in the config. Crafted at an Enchanting Apparatus from the matching diamond golem weapon."
     }
   ]
 }

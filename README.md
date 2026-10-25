@@ -45,7 +45,7 @@ place the weapon on a Scribe's Table, make a spell in your spell book, then shif
 | Item | Notes |
 |---|---|
 | Arcane Golem Sword, Axe, Spear | Cast on every hit (cooldown). The spell must have no Form glyph: the weapon supplies Touch. |
-| Arcane Mecha Bow | Its arrows cast the spell where they hit (same Form rule). Multishot as the Modular Golems mecha bow. |
+| Arcane Mecha Bow | Works like the Enchanter's Bow: the table adds a Projectile glyph (so the spell still may not have a Form glyph) and the golem fires spell arrows that resolve the spell where they land. No arrows needed. Un-scribed, it is a normal mecha bow that uses arrows. |
 Each is crafted at an Enchanting Apparatus from the matching diamond golem weapon (the bow from the iron mecha bow) and has a Guide entry under Arcane Weapons.
 Ars Nouveau charges no mana to non-player casters, so the limits are `weaponCooldown` (ticks between casts per golem) and the optional `weaponMaxCost` (refuse spells above this mana cost) in the `[weapons]` config section.
 The casting code uses Ars' `EntitySpellResolver` and `ICasterTool` (compile against Ars Nouveau 1.21.1-5.13.3: put its jar in `libs/` too).
