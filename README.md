@@ -52,10 +52,18 @@ Each is crafted at an Enchanting Apparatus from the matching diamond golem weapo
 Ars Nouveau charges no mana to non-player casters, so the limits are `weaponCooldown` (ticks between casts per golem) and the optional `weaponMaxCost` (refuse spells above this mana cost) in the `[weapons]` config section.
 The casting code uses Ars' `EntitySpellResolver` and `ICasterTool` (compile against Ars Nouveau 1.21.1-5.13.3: put its jar in `libs/` too).
 
+## Arcane armour
+A set for Metal Golems in violet cloth and gold: Arcane Cowl, Tunic, Sash and Boots (armour 11 / 14 / 8 / 6, toughness 6, the same tier as Modular Golems' diamond-grade sets).
+The shapes are custom and deliberately restrained, with about the coverage of Wind Spirit: head and torso covered, short sleeves with forearm cuffs, a hip sash and low boots.
+Each piece worn adds one level of **Source Mantle**: 4% less magic damage and 1 health regained every 5 seconds per piece (full set: 16% and about 0.8 health per second).
+Crafted at an Enchanting Apparatus from the matching vanilla diamond armour piece, Source Gems and essences, and has a Guide entry under Arcane Armor.
+The shapes and textures come from one description (`tools/armor_spec.py`): `tools/gen_armor.py` paints the textures and `tools/gen_armor_java.py` writes `ArmorLayers.java` (client only).
+
 ## Config (`config/mg_arcane-common.toml`)
 * `targets` - who area abilities (Tremor, Quagmire, Ash Cloud) may affect besides the golem's own target:
   `HOSTILE` (default), `ALL_MOBS`, `ALL_MOBS_AND_PLAYERS`. The owner, the owner's pets and the owner's golems are never affected.
 * `[weapons]`: `weaponCooldown`, `weaponMaxCost`, `shoulderCooldown`, `shoulderRange`.
+* `[armor]`: `mantleReduction`, `mantleHeal`, `mantleInterval` (Source Mantle, per piece worn).
 * `[upgrades]`: `recallDistance`, `recallCooldown`, `spongeHeal`, `lightRadius`, `surgeDuration`, `surgeCooldown`, `glyphChance`.
 * `auraInterval`, `splashFraction`, `fangCooldown`, `lightningCooldown`, `lightningChance`, `lightningDamage`.
   Thunderstrike's bolt is visual only (no fire, never hurts the owner or pets); damage goes to the target and enemies within 2.5 blocks.

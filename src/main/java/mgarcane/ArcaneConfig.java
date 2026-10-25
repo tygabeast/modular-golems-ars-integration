@@ -32,6 +32,8 @@ public class ArcaneConfig {
 	public final ModConfigSpec.DoubleValue glyphChance;
 	public final ModConfigSpec.IntValue weaponCooldown;
 	public final ModConfigSpec.IntValue weaponMaxCost, shoulderCooldown, shoulderRange;
+	public final ModConfigSpec.DoubleValue mantleReduction, mantleHeal;
+	public final ModConfigSpec.IntValue mantleInterval;
 
 	private ArcaneConfig(ModConfigSpec.Builder b) {
 		b.push("arcane");
@@ -77,6 +79,14 @@ public class ArcaneConfig {
 				.defineInRange("shoulderCooldown", 40, 5, 24000);
 		shoulderRange = b.comment("Arcane Shoulder Wand: farthest target distance, in blocks, it will fire at")
 				.defineInRange("shoulderRange", 24, 1, 128);
+		b.pop();
+		b.push("armor");
+		mantleReduction = b.comment("Source Mantle (Arcane armour): fraction of magic damage negated per piece worn (four pieces = four times this)")
+				.defineInRange("mantleReduction", 0.04, 0, 0.25);
+		mantleHeal = b.comment("Source Mantle: health regained per piece worn each interval")
+				.defineInRange("mantleHeal", 1.0, 0, 100);
+		mantleInterval = b.comment("Source Mantle: ticks between heals (20 = one second)")
+				.defineInRange("mantleInterval", 100, 20, 24000);
 		b.pop();
 	}
 

@@ -228,6 +228,33 @@ public final class Mods {
 		}
 	}
 
+	/** Arcane armour: each piece worn adds a level. Resists magic damage and slowly mends the golem. */
+	public static class SourceMantle extends GolemModifier {
+		private static final ResourceLocation ID = id("mantle");
+
+		public SourceMantle() {
+			super(StatFilterType.HEALTH, 4);
+		}
+
+		@Override
+		public void onDamaged(AbstractGolemEntity<?, ?> g, DamageData.Defence d, int lv) {
+			if (isMagic(d.getSource()))
+				d.addDealtModifier(DamageModifier.multTotal(1f - (float) (ArcaneConfig.COMMON.mantleReduction.get() * lv), ID));
+		}
+
+		@Override
+		public void onAiStep(AbstractGolemEntity<?, ?> g, int lv) {
+			if (client(g) || !Arc.every(g, ArcaneConfig.COMMON.mantleInterval.get()) || g.getHealth() >= g.getMaxHealth()) return;
+			g.heal((float) (ArcaneConfig.COMMON.mantleHeal.get() * lv));
+		}
+
+		@Override
+		public List<MutableComponent> getDetail(int lv) {
+			return desc(this, Arc.pct(ArcaneConfig.COMMON.mantleReduction.get() * lv), ArcaneConfig.COMMON.mantleHeal.get() * lv,
+					ArcaneConfig.COMMON.mantleInterval.get() / 20.0);
+		}
+	}
+
 	/** Manipulation essence: hits drag the target toward the golem. */
 	public static class Telekinesis extends GolemModifier {
 		public Telekinesis() {

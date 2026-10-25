@@ -2,7 +2,7 @@ import sys, os, json, shutil
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from gen_tex import build_all, TYPES
 from mats import MATS
-import gen_upgrades, gen_weapons
+import gen_upgrades, gen_weapons, gen_armor_data
 R = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'src', 'main', 'resources')
 shutil.rmtree(R, ignore_errors=True)
 # static metadata (mods.toml, LICENSE, NOTICE) lives in meta/ so a regeneration can never drop it
@@ -155,9 +155,11 @@ DESC.update({  # upgrade modifier descriptions (the %s values are filled in by t
  'magelight_core': ('Magelight Core', 'Its owner gets Night Vision within %s blocks'),
  'source_surge': ('Source Surge', 'When its owner is hit by a mob, gains Speed and Strength for %s seconds (cooldown %s seconds)'),
  'glyph_strike': ('Glyph Strike', '%s chance per hit to lay Hex, Shocked or Snared on the target'),
+ 'source_mantle': ('Source Mantle', 'Take %s less magic damage and regain %s health every %s seconds'),
 })
 gen_upgrades.build(w, R, lang, DESC)
 gen_weapons.build(w, R, lang)
+gen_armor_data.build(w, R, lang)
 for i, (n, d) in DESC.items():
     lang[f'modifier.modulargolems.{i}'] = n; lang[f'modifier.modulargolems.{i}.desc'] = d
 w('assets/modulargolems/lang/en_us.json', dict(sorted(lang.items())))

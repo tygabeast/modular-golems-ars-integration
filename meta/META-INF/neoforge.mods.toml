@@ -4,7 +4,7 @@ license = "MIT"
 
 [[mods]]
 modId = "mg_arcane"
-version = "1.6.0"
+version = "1.7.0"
 displayName = "Modular Golems - Ars Integration"
 logoFile = "logo.png"
 authors = "Tygabeast"
@@ -13,6 +13,7 @@ Adds Modular Golems parts, constructs and abilities for the materials of Ars Nou
 Source Gem, the Fire/Water/Earth/Air/Conjuration/Abjuration/Manipulation essences, Anima, Silt/Lava/Mire/Cinder/Vapor/Tempest
 essences and the Elemancer Shard. Constructs and golem parts are made at the Enchanting Apparatus.
 Ars Elemental and Ars Elemancy are optional: the Anima, combination and shard materials only appear when those mods are installed.
+Also adds Arcane golem weapons that cast spells, and a set of Arcane golem armour with the Source Mantle ability.
 Config: mg_arcane-common.toml.
 '''
 

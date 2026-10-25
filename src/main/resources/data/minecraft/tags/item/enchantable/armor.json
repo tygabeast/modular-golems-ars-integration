@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "modulargolems:arcane_helmet",
+      "required": false
+    },
+    {
+      "id": "modulargolems:arcane_chestplate",
+      "required": false
+    },
+    {
+      "id": "modulargolems:arcane_shinguard",
+      "required": false
+    },
+    {
+      "id": "modulargolems:arcane_boots",
+      "required": false
+    }
+  ]
+}

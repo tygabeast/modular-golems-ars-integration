@@ -151,3 +151,8 @@ def wand():
     p.s(14,8,W)
     p.outline(); return p.img()
 
+
+
+def _rect(p, x0, y0, x1, y1, fn):
+    for y in range(y0, y1 + 1):
+        for x in range(x0, x1 + 1): p.s(x, y, fn(x, y))
