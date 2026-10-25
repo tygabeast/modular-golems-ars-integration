@@ -6,10 +6,12 @@ import com.hollingsworth.arsnouveau.api.spell.AbstractCaster;
 import com.hollingsworth.arsnouveau.api.spell.AbstractSpellPart;
 import com.hollingsworth.arsnouveau.api.spell.EntitySpellResolver;
 import com.hollingsworth.arsnouveau.api.spell.Spell;
+import com.hollingsworth.arsnouveau.api.spell.SpellCaster;
 import com.hollingsworth.arsnouveau.api.spell.SpellContext;
 import com.hollingsworth.arsnouveau.api.spell.wrapped_caster.LivingCaster;
 import com.hollingsworth.arsnouveau.common.spell.method.MethodTouch;
 import com.hollingsworth.arsnouveau.common.util.PortUtil;
+import com.hollingsworth.arsnouveau.setup.registry.DataComponentRegistry;
 import dev.xkmc.l2damagetracker.contents.attack.DamageData;
 import dev.xkmc.modulargolems.content.entity.metalgolem.MetalGolemEntity;
 import dev.xkmc.modulargolems.content.item.equipments.IAttackListenerWeapon;
@@ -57,6 +59,7 @@ public final class CasterWeapons {
 	static void cast(LivingEntity golem, ItemStack stack, ICasterTool tool, Entity target) {
 		if (!(golem.level() instanceof ServerLevel sl) || target == null || !target.isAlive()) return;
 		AbstractCaster<?> caster = tool.getSpellCaster(stack);
+		if (caster == null) return;   // not scribed yet (items made by an older version have no caster data)
 		Spell spell = caster.getSpell();
 		if (spell.isEmpty()) return;
 		int cap = ArcaneConfig.COMMON.weaponMaxCost.get();
@@ -78,6 +81,11 @@ public final class CasterWeapons {
 		list.add(MethodTouch.INSTANCE);
 		list.addAll(spell.recipe);
 		spell.recipe = list;
+	}
+
+	/** Every caster item starts with an empty spell caster component; without it the Scribe's Table cannot scribe it. */
+	static Item.Properties withCaster(Item.Properties p) {
+		return p.component(DataComponentRegistry.SPELL_CASTER.get(), new SpellCaster());
 	}
 
 	// ---- melee ------------------------------------------------------------------------------------------------------
@@ -121,7 +129,7 @@ public final class CasterWeapons {
 	public static class Bow extends MetalGolemMechaBowItem implements ICasterTool {
 
 		public Bow(Item.Properties p) {
-			super(p, 30, 5);
+			super(withCaster(p), 30, 5);
 		}
 
 		@Override
@@ -185,6 +193,11 @@ public final class CasterWeapons {
 		@Override
 		public boolean fireResistant() {
 			return false;
+		}
+
+		@Override
+		public Item.Properties modify(Item.Properties p) {
+			return withCaster(IGolemWeaponMaterial.super.modify(p));
 		}
 
 		@Override
